@@ -1,8 +1,4 @@
 ﻿
-
-
-Habib Boloorchi Tabrizi
-
 • hboloor@okstate.edu • [Linkedin.com/in/Habib-Boloorchi](https://www.linkedin.com/in/habib-boloorchi) • [github.com/Habib-Boloorchi](https://github.com/habib-Boloorchi)
 
 I am a Ph.D. candidate in Computer Science at Oklahoma State University, specializing in Computer Vision, Machine Learning, and Robotics. Over the last 7 years, I have gained extensive data science experience through internships in industry and research and development in academia. This includes 4 years focused on Machine Vision, 1 year dedicated to Natural Language Processing, and 2 years in Big Data Management and Analysis. My expertise also includes software engineering and full-stack mobile application development. My dissertation centers on Visual Inertial Odometry, aimed at enhancing the precision of navigation systems in humanoid robots.

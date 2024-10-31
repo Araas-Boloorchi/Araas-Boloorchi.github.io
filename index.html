@@ -10,71 +10,93 @@
       gtag('config', 'G-STGLQW4BJX');
     </script>
 
-    <!-- Title and Meta Information -->
+    <!-- Title -->
     <title>Habib Boloorchi</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- External Libraries -->
+    <!-- Isotope JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
     <!-- Custom Style -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
 
   <body id="body">
+
     <div id="main">
       <div id="intro">
         <div id="intro-text">
           <h1>Habib Boloorchi</h1>
           <p>
-            I'm a Ph.D. candidate in Computer Science at Oklahoma State University. I specialize in machine learning, computer vision, large language models, and more.
+            I'm a Ph.D. candidate in Computer Science at Oklahoma State University. I am a researcher and machine learning expert focused on deep learning model architecture for industry and academia, specializing in computer vision, large language models, robotics, and IoT, with machine learning and data science expertise.
             <div id="more-bio" style="display: none;">
-              <p>Additional detailed biography content here...</p>
-            </div>
-            <a href="javascript:toggle_bio()">Formal Bio</a> | 
-            <a href="https://github.com/habib-Boloorchi">GitHub</a> | 
-            <a href="https://scholar.google.com/citations?user=0oXdUkAAAAAJ&hl=en">G. Scholar</a> | 
-            <a href="https://www.linkedin.com/in/habib-boloorchi">LinkedIn</a>
+              <br>
+              <p>Habib Boloorchi is a Ph.D. candidate in Computer Science at Oklahoma State University with a strong focus on machine learning, computer vision, and large language models. He has extensive experience designing and developing advanced machine learning models, including explainable deep learning models and visual odometry systems. Habib has worked on projects that span across various domains, from healthcare AI to robotics, utilizing his expertise in deep learning, graph neural networks, and visual-inertial odometry.
+
+His industry experience includes positions as a Machine Learning Engineer at ILead Laboratory, where he developed an explainable deep model for chart interpretation with high precision, and at Sanborn, where he improved depth estimation techniques and optimized deep learning models for high-resolution imagery. Habib has also worked at PricewaterhouseCoopers (PwC), General Electric, and other organizations, contributing to diverse projects involving data visualization, machine vision, and mobile applications.
+
+Throughout his career, Habib has demonstrated an aptitude for interdisciplinary teamwork and a passion for creating impactful, real-world AI solutions. His skill set includes expertise in PyTorch, TensorFlow, Keras, and numerous programming languages such as Python, C++, Java, and Dart. His contributions to academia are reflected in his multiple publications in international conferences and his role as a research and teaching associate at OSU, where he has been involved in the fields of explainable AI, computer vision, and health data science.
+
+Habib's work has earned him numerous accolades, including scholarships for entrepreneurship and innovation, as well as top placements in business plan and technical competitions. He is a three-time finalist in the Spears School of Business plan competition and has been recognized for his innovative approaches in both AI and robotics.</p></div>
+            <br>
+            <a href="javascript:toggle_bio()">Formal Bio</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/habib-Boloorchi">Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://scholar.google.com/citations?user=0oXdUkAAAAAJ&hl=en">G. Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/habib-boloorchi">LinkedIn</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <br><br>
+            hboloor at okstate dot edu
+            <br><br>
           </p>
         </div>
         <div id="intro-image">
-          <img src="images/profile.jpg" alt="Profile Image">
+          <img src="images/profile.jpg">
         </div>
       </div>
 
       <div id="filters" class="button-group">
         <button class="button is-checked" data-filter=".highlight">Highlights</button>
         <button class="button" data-filter=".publication">Research</button>
+        <button class="button" data-filter=".talk">Talks</button>
+        <button class="button" data-filter=".misc">Misc</button>
       </div>
 
       <div class="grid">
-        <!-- Highlights Section -->
         <div class="list-item highlight description" data-category="highlight">
           Some recent highlights from our research:
         </div>
+
         <div class="list-item highlight previews" data-category="highlight">
-          <video playsinline muted autoplay loop><source src="images/VIO.mp4" type="video/mp4"></video>
-          <video playsinline muted autoplay loop><source src="images/Nao_Self_Calibration.mp4" type="video/mp4"></video>
-          <video playsinline muted autoplay loop><source src="images/Arm_Robot.mp4" type="video/mp4"></video>
+          <video class="preview1" playsinline="" muted="" autoplay="" loop=""><source src="images/VIO.mp4" type="video/mp4"></video>
+          <video class="preview2" playsinline="" muted="" autoplay="" loop=""><source src="images/Nao_Self_Calibration.mp4" type="video/mp4"></video>
+          <video class="preview3" playsinline="" muted="" autoplay="" loop=""><source src="images/Arm_Robot.mp4" type="video/mp4"></video>
         </div>
 
-        <!-- Research Section -->
+       <div id="main-highlights">
+        <div class="list-item highlight toggle-button" data-category="highlight">
+          <a id="toggle_highlights_button" href="javascript:toggle_highlights()">Show more</a>
+        </div>
+
+        <!-- Publications -->
         <div class="list-item publication project-description" data-category="publication">
-          <h3><a href="https://scholar.google.com">Brain-Inspired Visual Odometry</a></h3>
+          <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=0oXdUkAAAAAJ&citation_for_view=0oXdUkAAAAAJ:9yKSN-GCB0IC">Brain-Inspired Visual Odometry: Balancing Speed and Interpretability through a System of Systems Approach</a></h3>
           <p>Habib Boloorchi Tabrizi, Christopher Crick</p>
         </div>
-        <div class="list-item publication project-description" data-category="publication">
-          <h3><a href="https://ieeexplore.ieee.org">Enhancing ProteinBERT</a></h3>
-          <p>Jewelle D. Stone, Habib Boloorchi Tabrizi</p>
-        </div>
+       </div>
+       
+       <div class="list-item publication project-description" data-category="publication">
+          <h3><a href="https://ieeexplore.ieee.org/abstract/document/10385640">Enhancing ProteinBERT: Integrating Intrinsically Disordered Proteins for Comprehensive Proteomic Predictions</a></h3>
+          <p>Jewelle D. Stone, Habib Boloorchi Tabrizi, Rittika Shamsuddin</p>
+       </div>
       </div>
 
-      <div id="footer">Feel free to download this website's <a href="https://github.com/andyzeng/andyzeng.github.io">template</a>. Inspired by <a href="https://jonbarron.info/">Jon's website</a>.</div>
+      <div id="footer">Feel free to download this website's <a href="https://github.com/andyzeng/andyzeng.github.io">template</a>, just add a link back to my website. Inspired by <a href="https://jonbarron.info/">Jon's website</a>.</div>
+
     </div>
 
     <script>
@@ -82,30 +104,46 @@
         var $grid = $('.grid').isotope({
           itemSelector: '.list-item',
           layoutMode: 'fitRows',
-          transitionDuration: 0
+          transitionDuration: 0,
+          stagger: 10,
+          initLayout: true
         });
 
-        // Filter items on button click
+        // Filter on button click
         $('#filters').on('click', 'button', function() {
           var filterValue = $(this).attr('data-filter');
           localStorage.setItem('filterValue', filterValue);
           $grid.isotope({ filter: filterValue });
-          
-          // Update button active state
+
+          // Toggle button active state
           $('#filters .button').removeClass('is-checked');
           $(this).addClass('is-checked');
         });
 
-        // Initialize filter state
+        // Retrieve cached filter state
         var savedFilter = localStorage.getItem('filterValue') || '.highlight';
         $grid.isotope({ filter: savedFilter });
         $('#filters .button[data-filter="' + savedFilter + '"]').addClass('is-checked');
       });
 
-      // Toggle bio visibility
       function toggle_bio() {
         var bio = document.getElementById("more-bio");
         bio.style.display = bio.style.display === "none" ? "block" : "none";
+      }
+
+      function toggle_highlights() {
+        var highlights = document.getElementById("main-highlights");
+        var moreHighlights = document.getElementById("more-highlights");
+        var button = document.getElementById("toggle_highlights_button");
+        if (moreHighlights && moreHighlights.style.display === "none") {
+          highlights.style.display = "none";
+          moreHighlights.style.display = "block";
+          button.innerHTML = "Show less";
+        } else {
+          highlights.style.display = "block";
+          if (moreHighlights) moreHighlights.style.display = "none";
+          button.innerHTML = "Show more";
+        }
       }
     </script>
   </body>

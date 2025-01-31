@@ -38,17 +38,17 @@
         font-weight: bold;
       }
 
-      /* Make the videos bigger (1.5×) */
+      /* Make the videos larger (1.5×) */
       .list-item.highlight.previews {
-        display: flex;       /* Place videos in a row */
-        gap: 2rem;          /* Add space between them */
+        display: flex;
+        gap: 2rem;
         justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;    /* Wrap to the next line if needed */
+        align-items: flex-start;
+        flex-wrap: wrap;
       }
       .preview1, .preview2, .preview3 {
-        transform: scale(1);      /* Scale the video to 1.5× */
-        transform-origin: center;   /* Scale from the center */
+        transform: scale(1.5);
+        transform-origin: top left;
       }
     </style>
   </head>
@@ -120,6 +120,8 @@ Araas's diverse experiences have equipped him with a robust skill set in machine
             <source src="images/Arm_Robot.mp4" type="video/mp4">
           </video>
         </div>
+
+        <!-- NEW ITEM: SightVoice Highlight -->
         <div class="list-item highlight" data-category="highlight">
           <h3>SightVoice</h3>
           <p>
@@ -127,6 +129,7 @@ Araas's diverse experiences have equipped him with a robust skill set in machine
           </p>
           <img src="images/sightvoice.jpg" alt="SightVoice Demo" style="max-width: 100%; height: auto;">
         </div>
+        <!-- END NEW ITEM -->
 
         <!-- Publications Section -->
         <div class="list-item publication project-description" data-category="publication">

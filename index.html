@@ -38,23 +38,34 @@
         font-weight: bold;
       }
 
-      /* Make the videos larger (1.5×) */
+      /* Make highlight videos stack vertically */
       .list-item.highlight.previews {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        align-items: flex-start;
-        flex-wrap: wrap;
+        margin-bottom: 2rem;  /* Some spacing at the bottom */
       }
-      .preview1, .preview2, .preview3 {
-        transform: scale(1.5);
-        transform-origin: top left;
+
+      /* Center and size each video on its own line */
+      .list-item.highlight.previews video {
+        display: block;
+        margin: 1rem auto;    /* Center horizontally & add vertical spacing */
+        width: 70%;           /* Adjust as needed (e.g. 50%, 80%, etc.) */
+        max-width: 600px;     /* Prevent them from getting too large */
+        height: auto;
+      }
+
+      /* Extra styling for the new SightVoice highlight */
+      .sightvoice {
+        margin-bottom: 2rem;     /* Add extra space after SightVoice block */
+      }
+      .sightvoice img {
+        display: block;          /* Make image a block-level element for centering */
+        margin: 1rem auto 0;     /* Center horizontally and add top margin */
+        max-width: 50%;          /* Control image size; adjust as needed */
+        height: auto;
       }
     </style>
   </head>
 
   <body id="body">
-
     <div id="main">
       <div id="intro">
         <div id="intro-text">
@@ -122,12 +133,12 @@ Araas's diverse experiences have equipped him with a robust skill set in machine
         </div>
 
         <!-- NEW ITEM: SightVoice Highlight -->
-        <div class="list-item highlight" data-category="highlight">
+        <div class="list-item highlight sightvoice" data-category="highlight">
           <h3>SightVoice</h3>
           <p>
             SightVoice is a platform that leverages computer vision and deep learning to assist visually impaired individuals in real-time, offering audio feedback on the user’s surroundings and helping them navigate the world more independently.
           </p>
-          <img src="images/WhatsApp Image 2025-01-21 at 22.56.56_9bb54812.jpg" alt="SightVoice Demo" style="max-width: 100%; height: auto;">
+          <img src="images/sightvoice.jpg" alt="SightVoice Demo">
         </div>
         <!-- END NEW ITEM -->
 

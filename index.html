@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
-<html>
-  <head>
+<html lang="en">
+<head>
     <!-- Google Analytics Tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-STGLQW4BJX"></script>
     <script>
@@ -10,543 +10,799 @@
       gtag('config', 'G-STGLQW4BJX');
     </script>
 
-    <!-- Title -->
     <title>Araas (Habib) Boloorchi</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Isotope JS -->
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- jQuery and Isotope -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Additional Styles for Custom Formatting -->
     <style>
-      .skills {
-        color: grey;
-      }
-      .job-title {
-        font-weight: bold;
-      }
-      .company-name {
-        font-weight: bold;
-      }
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-      /* Make highlight videos stack vertically and bigger */
-      .list-item.highlight.previews {
-        margin-bottom: 3rem;  /* More spacing at the bottom */
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      /* Center and size each video on its own line - BIGGER as requested */
-      .list-item.highlight.previews video {
-        display: block;
-        margin: 1.5rem auto;    /* Center horizontally & add vertical spacing */
-        width: 100%;           /* Take full width of container */
-        max-width: 900px;     /* Increased from 700px to 900px */
-        height: auto;
-      }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
 
-      /* Extra styling for the new SightVoice highlight */
-      .sightvoice {
-        margin-bottom: 2rem;     /* Add extra space after SightVoice block */
-      }
-      .sightvoice img {
-        display: block;          /* Make image a block-level element for centering */
-        margin: 1rem auto 0;     /* Center horizontally and add top margin */
-        max-width: 80%;          /* Increased from 70% to 80% */
-        height: auto;
-      }
-      
-      /* Resume styling */
-      .resume-container {
-        max-width: 900px;
-        margin: 0 auto;
-        font-family: 'Asap', sans-serif;
-        line-height: 1.6;
-      }
-      
-      .resume-section {
-        margin-bottom: 2rem;
-      }
-      
-      .resume-section h2 {
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1rem;
-      }
-      
-      .resume-section h3 {
-        margin-bottom: 0.3rem;
-      }
-      
-      .resume-job {
-        margin-bottom: 1.5rem;
-      }
-      
-      .resume-date {
-        color: #666;
-        font-style: italic;
-        margin-bottom: 0.5rem;
-      }
-      
-      .resume-skills ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        padding: 0;
-        list-style: none;
-      }
-      
-      .resume-skills li {
-        background-color: #f5f5f5;
-        padding: 0.3rem 0.7rem;
-        border-radius: 3px;
-        font-size: 0.9rem;
-      }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Section */
+        .header {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .header-info h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-info .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .header-info .description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .bio-toggle {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid white;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-button:hover,
+        .nav-button.active {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .card h3 a:hover {
+            color: var(--accent-color);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+
+        /* Media Content */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .media-item {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .media-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Unified Media Size */
+        .media-content {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .media-content video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .media-content img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .media-caption {
+            padding: 1.5rem;
+        }
+
+        .media-caption h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Work Experience Styling */
+        .job {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .company-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .job-date {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .skills {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* Resume Styling */
+        .resume-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .resume-section h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .resume-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            color: var(--text-light);
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 2rem;
+            }
+
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .header-info h1 {
+                font-size: 2.5rem;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Highlight quote styling */
+        .highlight-quote {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 3rem;
+            border-radius: var(--radius);
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
     </style>
-  </head>
+</head>
 
-  <body id="body">
-    <div id="main">
-      <div id="intro">
-        <div id="intro-text">
-          <h1>Araas Boloorchi</h1>
-          <p>
-            I'm a Ph.D. candidate in Computer Science at Oklahoma State University. I am a researcher and machine learning expert focused on deep learning model architecture for industry and academia, specializing in computer vision, large language models, robotics, and IoT, with machine learning and data science expertise.
-            <div id="more-bio" style="display: none;">
-              <br>
-              <p>Araas Boloorchi's journey in technology began in high school, where he focused on math and physics. His passion for innovation led him to the University of Science and Culture, where he pursued a degree in software engineering. In his first year, Araas began exploring the world of humanoid robots, utilizing mobile phones as a platform. This early experience sparked his interest in artificial intelligence and machine learning.
-
-During his undergraduate years, Araas formed a team that participated in numerous competitions. One notable achievement was securing third place in an AI irregular gesture recognition competition using surveillance cameras. The challenge involved detecting fights, thrown objects, and left baggage. Araas's team also competed in various robotics contests, where he took on the role of a mentor, teaching his team machine learning techniques.
-
-After earning his bachelor's degree, Araas pursued a master's degree at the University of Qazvin in Artificial Intelligence and Robotics, where he joined the MRL team in the Standard Platform League, focusing on NAO robots. His interest in cognitive science and the dream of robot's selfawareness led him to work in a cognitive systems lab, delving into EEG and cognitive science.
-
-Araas's academic journey then took him to the United States, where he joined Oklahoma State University for a direct Ph.D. program. At OSU, he became a Graduate Teaching Assistant in his first year, sharing his knowledge and expertise with students. He then joined the Advanced Tech Research Center, focusing on Simultaneous Localization and Mapping (SLAM) and visual-inertial odometry. His work involved developing hardware with Raspberry Pi, cameras, and IMU, and was funded by the Air Force Institute.
-
-Following his time at the ATRC, Araas worked in the Cyber-Physical Lab, where he utilized Unity and SolidWorks to create CAD models, virtual relity and Augmented reality. He also interned at Baker Hughes, a General Electric company, PwC, and Sanborn, gaining valuable industry experience.
-
-Throughout his time at OSU, Araas continued to serve as a TA, sharing his knowledge in courses related to programming languages and computer science. He later joined the i-LEAD lab, focusing on explainable AI and computer vision. His research on visual-inertial odometry for low-cost devices culminated
-
-in a published paper titled "Brain-Inspired Visual Odometry: Balancing Speed and Interpretability through a System of Systems Approach." This work exemplifies Araas's commitment to advancing AI technology while ensuring practical applications and interpretability.
-
-Araas's diverse experiences have equipped him with a robust skill set in machine learning, robotics, computer vision, and software engineering. His journey reflects a continuous pursuit of knowledge and innovation, with a vision to bridge the gap between cutting-edge technology and real-world applications.</p>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>Araas Boloorchi</h1>
+                    <div class="subtitle">Ph.D. Computer Science | Machine Learning Engineer</div>
+                    <div class="description">
+                        Computer Vision Engineer with Ph.D. in Computer Science and 6+ years developing advanced CV systems and 3D reconstruction pipelines. Deep expertise in 3D computer vision, object detection/segmentation, and real-time scene understanding.
+                    </div>
+                    
+                    <div class="bio-toggle" id="bio-toggle">
+                        <p>Araas Boloorchi's journey in technology began in high school, where he focused on math and physics. His passion for innovation led him to the University of Science and Culture, where he pursued a degree in software engineering. During his undergraduate years, Araas formed a team that participated in numerous competitions, securing third place in an AI irregular gesture recognition competition.</p>
+                        
+                        <p>After earning his bachelor's degree, Araas pursued a master's degree at the University of Qazvin in Artificial Intelligence and Robotics. His academic journey then took him to Oklahoma State University for a direct Ph.D. program, where he joined the Advanced Tech Research Center, focusing on Simultaneous Localization and Mapping (SLAM) and visual-inertial odometry.</p>
+                        
+                        <p>Throughout his career, Araas has worked at industry leaders including General Electric, PwC, and Sanborn, gaining valuable experience in machine learning, robotics, computer vision, and software engineering. His research on visual-inertial odometry culminated in published papers that exemplify his commitment to advancing AI technology while ensuring practical applications.</p>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="javascript:toggleBio()">Full Bio</a>
+                        <a href="https://github.com/Araas-Boloorchi" target="_blank">GitHub</a>
+                        <a href="https://scholar.google.com/citations?user=0oXdUkAAAAAJ&hl=en" target="_blank">Google Scholar</a>
+                        <a href="https://www.linkedin.com/in/Araas-boloorchi" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <img src="images/profile.jpg" alt="Araas Boloorchi" class="profile-image">
             </div>
-            <br>
-            <a href="javascript:toggle_bio()">Formal Bio</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/Araas-Boloorchi">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://scholar.google.com/citations?user=0oXdUkAAAAAJ&hl=en">Google Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://www.linkedin.com/in/Araas-boloorchi">LinkedIn</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <br><br>
-          </p>
-        </div>
-        <div id="intro-image">
-          <img src="images/profile.jpg" alt="Araas Boloorchi">
-        </div>
-      </div>
+        </header>
 
-      <!-- Filters Section - Added Resume button -->
-      <div id="filters" class="button-group">
-        <button class="button is-checked" data-filter=".highlight">Highlights</button>
-        <button class="button" data-filter=".publication">Research</button>
-        <button class="button" data-filter=".award">Awards & Scholarships</button>
-        <button class="button" data-filter=".work-experience">Work Experience</button>
-        <button class="button" data-filter=".resume">Resume</button>
-      </div>
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-button active" data-filter="highlights">Highlights</button>
+            <button class="nav-button" data-filter="research">Research</button>
+            <button class="nav-button" data-filter="awards">Awards</button>
+            <button class="nav-button" data-filter="experience">Experience</button>
+            <button class="nav-button" data-filter="resume">Resume</button>
+        </nav>
 
-      <!-- Grid Section -->
-      <div class="grid">
-        <!-- Highlights Section -->
-        <div class="list-item highlight description" data-category="highlight">
-          When a robot moves or an AI project works something in my heart falls down:
-        </div>
-
-        <div class="list-item highlight previews" data-category="highlight">
-          <video class="preview1" playsinline muted autoplay loop>
-            <source src="images/VIO.mp4" type="video/mp4">
-          </video>
-          <video class="preview2" playsinline muted autoplay loop>
-            <source src="images/Nao_Self_Calibration.mp4" type="video/mp4">
-          </video>
-          <video class="preview3" playsinline muted autoplay loop>
-            <source src="images/Arm_Robot.mp4" type="video/mp4">
-          </video>
-        </div>
-
-        <!-- NEW ITEM: SightVoice Highlight -->
-        <div class="list-item highlight sightvoice" data-category="highlight">
-          <h3>SightVoice</h3>
-          <p>
-            SightVoice is a platform that leverages computer vision and deep learning to assist visually impaired individuals in real-time, offering audio feedback on the user's surroundings and helping them navigate the world more independently.
-          </p>
-          <img src="images/WhatsApp Image 2025-01-21 at 22.56.56_9bb54812.jpg" alt="SightVoice Demo">
-        </div>
-        <!-- END NEW ITEM -->
-
-        <!-- Publications Section -->
-        <div class="list-item publication project-description" data-category="publication">
-          <h3><a href="https://link.springer.com/article/10.1186/s42467-024-00016-5">Towards responsible AI: an implementable blueprint for integrating explainability and social-cognitive frameworks in AI systems</a></h3>
-          <p>Rittika Shamsuddin, Araas Boloorchi, Pavan R. Gottimukkula</p>
-        </div>
-        <div class="list-item publication project-description" data-category="publication">
-          <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=0oXdUkAAAAAJ&citation_for_view=0oXdUkAAAAAJ:9yKSN-GCB0IC">Brain-Inspired Visual Odometry: Balancing Speed and Interpretability through a System of Systems Approach</a></h3>
-          <p>Araas Boloorchi Tabrizi, Christopher Crick</p>
-        </div>
+        <!-- Content Sections -->
         
-        <div class="list-item publication project-description" data-category="publication">
-          <h3><a href="https://ieeexplore.ieee.org/abstract/document/10385640">Enhancing ProteinBERT: Integrating Intrinsically Disordered Proteins for Comprehensive Proteomic Predictions</a></h3>
-          <p>Jewelle D. Stone, Araas Boloorchi Tabrizi, Rittika Shamsuddin</p>
-        </div>
+        <!-- Highlights Section -->
+        <section id="highlights" class="content-section">
+            <div class="highlight-quote">
+                "When a robot moves or an AI project works, something in my heart falls down"
+            </div>
+            
+            <div class="media-grid">
+                <div class="media-item">
+                    <video class="media-content" playsinline muted autoplay loop>
+                        <source src="images/VIO.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">
+                        <h4>Visual-Inertial Odometry</h4>
+                        <p>Real-time 3D navigation system for autonomous drones</p>
+                    </div>
+                </div>
+                
+                <div class="media-item">
+                    <video class="media-content" playsinline muted autoplay loop>
+                        <source src="images/Nao_Self_Calibration.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">
+                        <h4>NAO Robot Self-Calibration</h4>
+                        <p>Computer vision system for humanoid robot calibration</p>
+                    </div>
+                </div>
+                
+                <div class="media-item">
+                    <video class="media-content" playsinline muted autoplay loop>
+                        <source src="images/Arm_Robot.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">
+                        <h4>Robotic Arm Control</h4>
+                        <p>Precision control system for industrial applications</p>
+                    </div>
+                </div>
+                
+                <div class="media-item">
+                    <img class="media-content" src="images/WhatsApp Image 2025-01-21 at 22.56.56_9bb54812.jpg" alt="SightVoice Demo">
+                    <div class="media-caption">
+                        <h4>SightVoice</h4>
+                        <p>AI-powered platform leveraging computer vision to assist visually impaired individuals with real-time audio feedback</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="content-section hidden">
+            <div class="grid">
+                <div class="card">
+                    <h3><a href="https://link.springer.com/article/10.1186/s42467-024-00016-5" target="_blank">Towards responsible AI: an implementable blueprint for integrating explainability and social-cognitive frameworks in AI systems</a></h3>
+                    <p><strong>Authors:</strong> Rittika Shamsuddin, Araas Boloorchi, Pavan R. Gottimukkula</p>
+                    <p><strong>Published:</strong> Springer Nature Journal - AI Perspectives & Advances, Jan 2025</p>
+                    <p>Comprehensive framework for building explainable AI systems with social-cognitive considerations.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=0oXdUkAAAAAJ&citation_for_view=0oXdUkAAAAAJ:9yKSN-GCB0IC" target="_blank">Brain-Inspired Visual Odometry: Balancing Speed and Interpretability through a System of Systems Approach</a></h3>
+                    <p><strong>Authors:</strong> Araas Boloorchi Tabrizi, Christopher Crick</p>
+                    <p><strong>Published:</strong> IEEE International Conference on Computational Science and Computational Intelligence, Dec 2023</p>
+                    <p>Novel approach to visual odometry combining speed and interpretability for autonomous navigation.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><a href="https://ieeexplore.ieee.org/abstract/document/10385640" target="_blank">Enhancing ProteinBERT: Integrating Intrinsically Disordered Proteins for Comprehensive Proteomic Predictions</a></h3>
+                    <p><strong>Authors:</strong> Jewelle D. Stone, Araas Boloorchi Tabrizi, Rittika Shamsuddin</p>
+                    <p><strong>Published:</strong> IEEE International Conference on Bioinformatics and Biomedicine, Dec 2023</p>
+                    <p>Advanced protein analysis using transformer models for comprehensive proteomic predictions.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Awards Section -->
-        <div class="list-item award project-description" data-category="award">
-          <ul>
-            <li>
-              <h3>Health AI Bias Summer School and Datathon Scholarship</h3>
-              <p>August 2024</p>
-            </li>
-            <li>
-              <h3>Scholarships for I-corps Workshops (Two Ideas)</h3>
-              <p>June & July 2024</p>
-            </li>
-            <li>
-              <h3>3-time Finalist - Business Plan Competition, Spears School of Business</h3>
-              <p>Feb 2022, 2023, 2024</p>
-            </li>
-            <li>
-              <h3>Champion - International Student Art Performance Competition at OSU</h3>
-              <p>Nov 2022</p>
-            </li>
-            <li>
-              <h3>Creativity, Innovation, and Entrepreneurship Scholarship</h3>
-              <p>Dec 2021</p>
-            </li>
-            <li>
-              <h3>1st Place - Innovative Idea in Automation and Transportation Competition</h3>
-              <p>April 2018</p>
-            </li>
-            <li>
-              <h3>1st Place - Open International Robotics League (Soccer) Technical Competition</h3>
-              <p>April 2016</p>
-            </li>
-            <li>
-              <h3>Finalist - Machine Vision for Irregular Gesture Recognition Competition, AUT Cop</h3> 
-              <p>Sept 2013</p>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Work Experience Section -->
-        <div class="list-item work-experience project-description" data-category="work-experience">
-          <h2>Work Experience</h2>
-          
-          <!-- ILead Laboratory -->
-          <div class="job">
-            <h3 class="job-title"><strong>Machine Learning Engineer</strong></h3>
-            <h4 class="company-name"><strong>ILead Laboratory – Stillwater, OK</strong></h4>
-            <span>May 2023 - May 2024</span>
-            <ul>
-              <li>Designed and developed an explainable deep model for describing visual charts with 87% precision via fine-tuned GPT-3.5, based on CNN, graph learning, and DNN, which we are submitting to the PAMI 2024 Journal.</li>
-              <li>Improved 7% Breast Cancer Detection Datathon in X-ray in a multidisciplinary team with 9 members.</li>
-              <li class="skills"><strong>Skills and Languages:</strong> PyTorch, TensorFlow, Keras, GNN, CNN, LLM, BERT, GAN, Fine-Tuning</li>
-            </ul>
-          </div>
-
-          <!-- Sanborn -->
-          <div class="job">
-            <h3 class="job-title"><strong>Deep Learning and Computer Vision Engineer</strong></h3>
-            <h4 class="company-name"><strong>Sanborn - Colorado Springs, CO</strong></h4>
-            <span>May - August 2022</span>
-            <ul>
-              <li>Implemented and trained a new depth estimation approach with a 150 GB high-quality image dataset.</li>
-              <li>Enhanced the CNN models to process full HD images with a 15% reduction in complexity.</li>
-              <li class="skills"><strong>Skills and Languages:</strong> PyTorch, Keras, Python, CNN, Photogrammetry, Image Processing, Fine-Tuning</li>
-            </ul>
-          </div>
-
-          <!-- PricewaterhouseCoopers (PwC) -->
-          <div class="job">
-            <h3 class="job-title"><strong>Machine Learning Engineer</strong></h3>
-            <h4 class="company-name"><strong>PricewaterhouseCoopers (PwC) - Dallas, TX</strong></h4>
-            <span>May - August 2020</span>
-            <ul>
-              <li>Re-engineered and tailored a data visualization tool in 20% less than estimated time with a team of 5.</li>
-              <li class="skills"><strong>Skills and Languages:</strong> Tableau, PySpark, Scala, AWS, Microsoft Azure, Jira, Random Forest, SAS</li>
-            </ul>
-          </div>
-
-          <!-- General Electric -->
-          <div class="job">
-            <h3 class="job-title"><strong>Machine Vision and Deep Learning Engineer</strong></h3>
-            <h4 class="company-name"><strong>General Electric - Oklahoma City, OK</strong></h4>
-            <span>May - August 2019</span>
-            <ul>
-              <li>Developed a machine vision application to analyze drill bit reliability using multi-angle imaging; deployed it as a mobile application using Flutter. The prototype was created in 20% less time than estimated. Collaborated with Google's Flutter and Firebase teams alongside five teammates.</li>
-              <li>Improved the accuracy of CNN to 86% in locating compromised regions of drill bit integrity.</li>
-              <li class="skills"><strong>Skills and Languages:</strong> Flutter, Firebase, FireStore, NodeJS, GCP, Python, TensorFlow, Auto-ML</li>
-            </ul>
-          </div>
-
-          <!-- Advanced Technology Research Center -->
-          <div class="job">
-            <h3 class="job-title"><strong>Machine Learning Engineer</strong></h3>
-            <h4 class="company-name"><strong>Advanced Technology Research Center - Stillwater, OK</strong></h4>
-            <span>May 2018 - August 2019</span>
-            <ul>
-              <li>Enhanced and deployed Visual Inertial Odometry systems with 10% less complexity.</li>
-              <li>Built a Jetson robot and deployed an ML-based hand follower with 20% less prototyping estimation time.</li>
-              <li class="skills"><strong>Skills and Languages:</strong> Raspberry Pi, Jetson Nano, Arduino, Roller/Global Shutter Cameras, Lidar, SLAM</li>
-            </ul>
-          </div>
-
-          <!-- Mechatronic Research Lab (Nao, MRL-SPL) -->
-          <div class="job">
-            <h3 class="job-title"><strong>Machine Learning & Research Engineer</strong></h3>
-            <h4 class="company-name"><strong>Mechatronic Research Lab (Nao, MRL-SPL)</strong></h4>
-            <span>August 2015 - May 2017</span>
-            <ul>
-              <li>Implemented a vision self-calibration method and optimized computer vision libraries for humanoid robots.</li>
-              <li>Researched in a multidisciplinary team developing a classification system for EEG signals, enhancing BCI by 3%.</li>
-              <li class="skills"><strong>Skills and Languages:</strong> Proteus, OpenCV, C++, Neuroscience, Brain Anatomy, MATLAB, Machine Learning</li>
-            </ul>
-          </div>
-
-          <!-- Center for Cyber-Physical Systems -->
-          <div class="job">
-            <h3 class="job-title"><strong>Virtual Reality Developer</strong></h3>
-            <h4 class="company-name"><strong>Center for Cyber-Physical Systems - Stillwater, OK</strong></h4>
-            <span>August 2018 - December 2019</span>
-            <ul>
-              <li>Designed CAD models and conducted simulations to explore lunar habitat architectures for NASA.</li>
-              <li>Created an interactive VR platform focusing on the solar system to enhance learning for autistic children.</li>
-              <li class="skills"><strong>Skills and Languages:</strong> SolidWorks, C#, VB, Unity, Virtual Reality, GitHub</li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- NEW RESUME SECTION -->
-        <div class="list-item resume project-description" data-category="resume">
-          <div class="resume-container">
-            <div class="resume-section">
-              <h2>SUMMARY</h2>
-              <p>Machine-Learning engineer with Ph.D. in Computer Science and 5+ years translating research into production. Specialized in retrieval-augmented generation, explainable computer vision, and LLM-powered products. Experienced leading cross-functional teams from ideation to launch in startup and enterprise settings.</p>
-            </div>
-            
-            <div class="resume-section">
-              <h2>EDUCATION</h2>
-              <h3>Oklahoma State University</h3>
-              <p>Ph.D. and M.S., Computer Science | May 2025</p>
-              <p><em>Explainable AI in Visual Odometry and Generative AI For Autonomous Drones</em></p>
-            </div>
-            
-            <div class="resume-section">
-              <h2>PROFESSIONAL EXPERIENCE</h2>
-              
-              <div class="resume-job">
-                <h3>Machine Learning Engineer | Catchup AI, San Francisco, CA</h3>
-                <div class="resume-date">Jan 2024 - Present</div>
-                <ul>
-                  <li>Architected an agentic RAG communication assistant for managers, reducing manual meeting-summarization time by 60%+.</li>
-                  <li>Led a 4-engineer ML team from concept to MVP in 12 weeks, securing initial customer pilots.</li>
-                  <li>Built prompt-driven sentiment pipeline on Jira, Slack & Zoom JSON, boosting precision from 0.71 to 0.86.</li>
-                  <li>Implemented PyTorch GNN modeling company social graph, improving recommendation accuracy 22%.</li>
-                </ul>
-              </div>
-              
-              <div class="resume-job">
-                <h3>Machine Learning Engineer | ILead Lab, Stillwater, OK</h3>
-                <div class="resume-date">May 2023 - Jan 2024</div>
-                <ul>
-                  <li>Developed CNN to analyze statistical charts with 94% precision.</li>
-                  <li>Designed Gen-AI explanation module that generated insights with 91% user-rated clarity.</li>
-                  <li>Enhanced YOLO-based Keras model, raising breast-cancer detection recall 7%.</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="resume-section">
-              <h2>ADDITIONAL EXPERIENCE</h2>
-              
-              <div class="resume-job">
-                <h3>Computer Vision Engineer Intern | Sanborn, Colorado Springs, CO</h3>
-                <div class="resume-date">May 2022 - Aug 2022</div>
-                <ul>
-                  <li>Fine-tuned TensorFlow depth-estimation model, cutting inference latency 30%.</li>
-                  <li>Built OpenCV pipeline for stereo AV data, boosting downstream accuracy 15%.</li>
-                </ul>
-              </div>
-              
-              <div class="resume-job">
-                <h3>Data Scientist Intern | PwC, Dallas, TX</h3>
-                <div class="resume-date">May 2021 - Aug 2021</div>
-                <ul>
-                  <li>Created modular Python data-visualizer replacing Tableau, saving $50k license costs.</li>
-                </ul>
-              </div>
-              
-              <div class="resume-job">
-                <h3>Machine Learning Engineer Intern | General Electric, Oklahoma City, OK</h3>
-                <div class="resume-date">May 2020 - Aug 2020</div>
-                <ul>
-                  <li>Shipped mobile app that predicts oil-drill-bit reliability from photos, achieving 88% F1.</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="resume-section">
-              <h2>PROJECTS</h2>
-              
-              <div class="resume-job">
-                <h3>Visually Impaired Assistant Headband | Entrepreneurship Project</h3>
-                <div class="resume-date">Jan 2025</div>
-                <p>Designed and crafted a functioning prototype to give blind person awareness by voice and won many Business plan competitions.</p>
-              </div>
-              
-              <div class="resume-job">
-                <h3>AI + Global Health | 24 Hours Hackathon, San Francisco, CA</h3>
-                <div class="resume-date">Dec 2024</div>
-                <p>Launched prototype for blinds to alarm for obstacle recognition via webcam and apple vision pro.</p>
-              </div>
-              
-              <div class="resume-job">
-                <h3>Voice & Video | 12 Hours Hackathon, San Francisco, CA</h3>
-                <div class="resume-date">Dec 2024</div>
-                <p>Established a web app Agentic avatar to ask customers need and find it based on reviews.</p>
-              </div>
-              
-              <div class="resume-job">
-                <h3>HeyGen AI Avatar | 12 Hours Hackathon, San Francisco, CA</h3>
-                <div class="resume-date">Dec 2024</div>
-                <p>Modified a manager avatar agent able to meet with employees and report summaries using OpenAI.</p>
-              </div>
-              
-              <div class="resume-job">
-                <h3>Autonomous Drone Navigation | Advanced Tech and Research Center, Stillwater, OK</h3>
-                <div class="resume-date">Dec 2019</div>
-                <p>Realized conceptual method to real-time navigation device and Visual Inertial Odometry software.</p>
-              </div>
-            </div>
-            
-            <div class="resume-section">
-              <h2>PUBLICATIONS</h2>
-              
-              <div class="resume-job">
-                <h3>Springer Nature Journal | AI Perspectives & Advances</h3>
-                <div class="resume-date">Jan 2025</div>
-                <p>Towards responsible AI: an implementable blueprint for integrating explainability and social-cognitive frameworks in AI systems.</p>
-              </div>
-              
-              <div class="resume-job">
-                <h3>IEEE | International Conference on Computational Science and Computational Intelligence</h3>
-                <div class="resume-date">Dec 2023</div>
-                <p>Brain-Inspired Visual Odometry: Balancing Speed and Interpretability Through a System of Systems Approach.</p>
-              </div>
-              
-              <div class="resume-job">
-                <h3>IEEE | International Conference on Bioinformatics and Biomedicine</h3>
-                <div class="resume-date">Dec 2023</div>
-                <p>Enhancing ProteinBERT: Integrating Intrinsically Disordered Proteins for Comprehensive Proteomic Predictions.</p>
-              </div>
-            </div>
-            
-            <div class="resume-section">
-              <h2>AWARDS</h2>
-              
-              <div class="resume-job">
-                <h3>Hackathons and Datathon | AI Based Applications, San Francisco, CA</h3>
-                <ul>
-                  <li>2nd Place, ACM Hackathon (Apr 2025)</li>
-                  <li>1st place for Teamwork, awarded for creating a Visual Assistant for blinds, AI+ Global Health (Dec 2024)</li>
-                  <li>Top-five Finalist and 1st in 'Unified.to' platform, Startup Hackathon for Video and Sound (Dec 2024)</li>
-                  <li>Health AI Bias Summer School and Datathon Scholarship (HITI Lab) (Aug 2024)</li>
-                </ul>
-              </div>
-              
-              <div class="resume-job">
-                <h3>Innovation and Entrepreneurship | Oklahoma State University, Stillwater, OK</h3>
-                <ul>
-                  <li>I-Corps Workshop Scholarships for Innovative Projects (Jun - Jul 2024)</li>
-                  <li>Four-time Finalist, Business Plan Competition (Feb 2022 - Feb 2025)</li>
-                  <li>3rd Place, Business Plan Competition (Feb 2022)</li>
-                  <li>Creativity, Innovation, and Entrepreneurship Scholarship (Jan 2022)</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="resume-section">
-              <h2>SKILLS</h2>
-              
-              <div class="resume-skills">
-                <h3>AI Foundation</h3>
-                <p>General Machine Learning, GNN (Graph), CNN, GCN, Transformers, XGBoost</p>
+        <section id="awards" class="content-section hidden">
+            <div class="grid">
+                <div class="card">
+                    <h3>Recent Achievements (2024-2025)</h3>
+                    <ul>
+                        <li><strong>2nd Place, ACM Hackathon</strong> - Apr 2025</li>
+                        <li><strong>1st Place for Teamwork, AI+ Global Health Hackathon</strong> - Visual Assistant for visually impaired, Dec 2024</li>
+                        <li><strong>Top-five Finalist, Startup Hackathon</strong> - Video and Sound platform, Dec 2024</li>
+                        <li><strong>Health AI Bias Summer School Scholarship</strong> - HITI Lab, Aug 2024</li>
+                        <li><strong>I-Corps Workshop Scholarships</strong> - Two innovative projects, Jun-Jul 2024</li>
+                    </ul>
+                </div>
                 
-                <h3>LLM</h3>
-                <p>LlamaIndex, Prompt Engineering, RAG, Agentic, Lang Chain, OpenAI API</p>
+                <div class="card">
+                    <h3>Entrepreneurship & Innovation</h3>
+                    <ul>
+                        <li><strong>Four-time Finalist</strong> - Business Plan Competition, OSU (2022-2025)</li>
+                        <li><strong>3rd Place</strong> - Business Plan Competition, Feb 2022</li>
+                        <li><strong>Champion</strong> - International Student Art Performance, OSU, Nov 2022</li>
+                        <li><strong>Creativity, Innovation, and Entrepreneurship Scholarship</strong> - Dec 2021</li>
+                    </ul>
+                </div>
                 
-                <h3>Computer Vision</h3>
-                <p>Photogrammetry, 3D Computer Vision, Depth Estimation, SLAM, UAV Navigation</p>
-                
-                <h3>Robotics</h3>
-                <p>Sensor Fusion, Kalman Filter, Motion Planning, Reinforcement Learning, Jetson Nano</p>
-                
-                <h3>Programming & Scripting</h3>
-                <p>Python, Java, C, C++, Dart, Swift, Kotlin, Scala, MATLAB, React</p>
-                
-                <h3>Frameworks & Libraries</h3>
-                <p>PyTorch, TensorFlow, Keras, GCP, AWS, Django, ROS, OpenCV</p>
-                
-                <h3>Professional Skills</h3>
-                <p>Teamwork in a Cross-Functional Environment, Agile Software Development, Communication, Critical Thinking Skills, Data Visualization and Storytelling, Research</p>
-              </div>
+                <div class="card">
+                    <h3>Technical Competitions</h3>
+                    <ul>
+                        <li><strong>1st Place</strong> - Innovative Idea in Automation and Transportation, Apr 2018</li>
+                        <li><strong>1st Place</strong> - Open International Robotics League (Soccer), Apr 2016</li>
+                        <li><strong>Finalist</strong> - Machine Vision for Irregular Gesture Recognition, Sept 2013</li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-        <!-- END NEW RESUME SECTION -->
-      </div>
+        </section>
 
-      <!-- Footer Section -->
-      <div id="footer">
-        Feel free to download this website's <a href="https://github.com/andyzeng/andyzeng.github.io">template</a>, just add a link back to my website. Inspired by <a href="https://jonbarron.info/">Jon's website</a>.
-      </div>
+        <!-- Experience Section -->
+        <section id="experience" class="content-section hidden">
+            <div class="grid">
+                <div class="card">
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Machine Learning Engineer</div>
+                            <div class="company-name">FlyX Technologies - Sunnyvale, CA</div>
+                            <div class="job-date">May 2025 - Present</div>
+                        </div>
+                        <ul>
+                            <li>Developed YOLO-based object detection system for electrical infrastructure anomaly identification</li>
+                            <li>Implemented 3D scene understanding algorithms for infrastructure monitoring</li>
+                            <li>Developed autonomous flight control system with Jetson Nano Orin and Pixhawk autopilot</li>
+                        </ul>
+                        <div class="skills">
+                            <strong>Skills:</strong> YOLO, 3D Computer Vision, Jetson Nano, Pixhawk, Autonomous Systems
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Machine Learning Engineer</div>
+                            <div class="company-name">Catch up AI - San Francisco, CA</div>
+                            <div class="job-date">Jan 2024 - Present</div>
+                        </div>
+                        <ul>
+                            <li>Architected agentic GNN-based RAG communication assistant using LlamaIndex</li>
+                            <li>Led 4-engineer ML team from concept to MVP in 12 weeks</li>
+                            <li>Reduced manual meeting-summarization time by 60%</li>
+                        </ul>
+                        <div class="skills">
+                            <strong>Skills:</strong> GNN, RAG, LlamaIndex, Team Leadership, PyTorch
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Computer Vision Engineer</div>
+                            <div class="company-name">Sanborn - Colorado Springs, CO</div>
+                            <div class="job-date">May - August 2022</div>
+                        </div>
+                        <ul>
+                            <li>Developed Keras-based 3D reconstruction pipeline from stereo imagery</li>
+                            <li>Reduced inference latency by 30% through optimization</li>
+                            <li>Built real-time 3D scene reconstruction and object segmentation pipeline</li>
+                        </ul>
+                        <div class="skills">
+                            <strong>Skills:</strong> Keras, OpenCV, 3D Reconstruction, Stereo Vision, Photogrammetry
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Machine Learning Engineer</div>
+                            <div class="company-name">General Electric - Oklahoma City, OK</div>
+                            <div class="job-date">May - August 2020</div>
+                        </div>
+                        <ul>
+                            <li>Developed production-ready computer vision system for 3D drill bit reconstruction</li>
+                            <li>Achieved 88% F1 score for compromised part detection</li>
+                            <li>Built mobile application using Flutter and Firebase</li>
+                        </ul>
+                        <div class="skills">
+                            <strong>Skills:</strong> TensorFlow, Flutter, Firebase, Computer Vision, Mobile Development
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="content-section hidden">
+            <div class="card">
+                <div class="resume-section">
+                    <h2>Education</h2>
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Ph.D. and M.S., Computer Science</div>
+                            <div class="company-name">Oklahoma State University</div>
+                            <div class="job-date">May 2025</div>
+                        </div>
+                        <p>3D Computer Vision and Scene Understanding for Autonomous Systems - Focus: Real-time 3D reconstruction and Deep learning for visual-inertial navigation and real-time depth estimation</p>
+                    </div>
+                </div>
+                
+                <div class="resume-section">
+                    <h2>Selected Projects</h2>
+                    <div class="job">
+                        <div class="job-title">Visually Impaired Assistant Headband</div>
+                        <div class="job-date">Jan 2025</div>
+                        <p>Designed and crafted a functioning prototype to give blind person awareness by voice and won 4 competitions.</p>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-title">NASA Moon Station Project</div>
+                        <div class="job-date">Dec 2024</div>
+                        <p>Created SolidWorks CAD Model of stations and Space Exploration Vehicle. Launched prototype for Augmented Reality of the station.</p>
+                        <a href="https://www.youtube.com/watch?app=desktop&v=NDBrM3J_doM" target="_blank">View Project Video</a>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-title">Autonomous Drone Navigation</div>
+                        <div class="job-date">Dec 2019</div>
+                        <p>Realized conceptual method to real-time navigation device and Visual Inertial Odometry software.</p>
+                    </div>
+                </div>
+                
+                <div class="resume-section">
+                    <h2>Technical Skills</h2>
+                    <div class="resume-skills">
+                        <div class="skill-category">
+                            <h4>Deep Learning</h4>
+                            <p>General Machine Learning, GNN (Graph), CNN, GCN, Transformers, XGBoost</p>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Computer Vision</h4>
+                            <p>Photogrammetry, OpenCV, 3D Vision, Depth Estimation, SLAM, Open3D, Lidar</p>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Robotics</h4>
+                            <p>Sensor Fusion, Kalman Filter, Motion Planning, Reinforcement Learning, Jetson Nano</p>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Programming</h4>
+                            <p>Python, Java, C, C++, Dart, Swift, Kotlin, Scala, MATLAB, React</p>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Frameworks</h4>
+                            <p>PyTorch, TensorFlow, Keras, GCP, AWS, Django, ROS, ROS2, OpenCV</p>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Soft Skills</h4>
+                            <p>Team Leadership, Agile Development, Communication, Critical Thinking, Research</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <!-- Scripts -->
     <script>
-      $(document).ready(function() {
-        var $grid = $('.grid').isotope({
-          itemSelector: '.list-item',
-          layoutMode: 'fitRows',
-          transitionDuration: '0.4s',
-          stagger: 30,
-          initLayout: true
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-button');
+            const sections = document.querySelectorAll('.content-section');
+            
+            // Load saved filter or default to highlights
+            const savedFilter = localStorage.getItem('currentFilter') || 'highlights';
+            showSection(savedFilter);
+            
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    showSection(filter);
+                    
+                    // Save current filter
+                    localStorage.setItem('currentFilter', filter);
+                });
+                
+                // Set active button based on saved filter
+                if (button.getAttribute('data-filter') === savedFilter) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
         });
-
-        // Filter on button click
-        $('#filters').on('click', 'button', function() {
-          var filterValue = $(this).attr('data-filter');
-          localStorage.setItem('filterValue', filterValue);
-          $grid.isotope({ filter: filterValue });
-
-          // Toggle button active state
-          $('#filters .button').removeClass('is-checked');
-          $(this).addClass('is-checked');
-        });
-
-        // Retrieve cached filter state
-        var savedFilter = localStorage.getItem('filterValue') || '.highlight';
-        $grid.isotope({ filter: savedFilter });
-        $('#filters .button[data-filter="' + savedFilter + '"]').addClass('is-checked');
-      });
-
-      function toggle_bio() {
-        var bio = document.getElementById("more-bio");
-        bio.style.display = bio.style.display === "none" ? "block" : "none";
-      }
+        
+        function showSection(sectionName) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                if (section.id === sectionName) {
+                    section.classList.remove('hidden');
+                    // Trigger animation
+                    const cards = section.querySelectorAll('.card, .media-item');
+                    cards.forEach((card, index) => {
+                        card.style.animationDelay = `${index * 0.1}s`;
+                        card.style.animation = 'none';
+                        card.offsetHeight; // Trigger reflow
+                        card.style.animation = 'fadeInUp 0.6s ease forwards';
+                    });
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+        
+        function toggleBio() {
+            const bioToggle = document.getElementById('bio-toggle');
+            const isVisible = bioToggle.style.display !== 'none';
+            bioToggle.style.display = isVisible ? 'none' : 'block';
+        }
     </script>
-  </body>
+</body>
 </html>

@@ -54,7 +54,6 @@
             background: radial-gradient(ellipse at 50% 50%, #0a0f0a 0%, #020204 100%);
         }
 
-        /* Horizontal Grid Floor */
         .grid-floor {
             position: absolute;
             width: 200%;
@@ -62,20 +61,8 @@
             left: -50%;
             top: 50%;
             background: 
-                repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 40px,
-                    var(--wire) 40px,
-                    var(--wire) 41px
-                ),
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 40px,
-                    var(--wire) 40px,
-                    var(--wire) 41px
-                );
+                repeating-linear-gradient(90deg, transparent, transparent 40px, var(--wire) 40px, var(--wire) 41px),
+                repeating-linear-gradient(0deg, transparent, transparent 40px, var(--wire) 40px, var(--wire) 41px);
             transform: rotateX(75deg) translateZ(-100px);
             transform-origin: center top;
             animation: gridScroll 20s linear infinite;
@@ -86,26 +73,13 @@
             100% { transform: rotateX(75deg) translateZ(-100px) translateY(80px); }
         }
 
-        /* Vertical Grid Wall */
         .grid-wall {
             position: absolute;
             width: 100%;
             height: 100%;
             background: 
-                repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 60px,
-                    var(--wire) 60px,
-                    var(--wire) 61px
-                ),
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 60px,
-                    var(--wire) 60px,
-                    var(--wire) 61px
-                );
+                repeating-linear-gradient(90deg, transparent, transparent 60px, var(--wire) 60px, var(--wire) 61px),
+                repeating-linear-gradient(0deg, transparent, transparent 60px, var(--wire) 60px, var(--wire) 61px);
             opacity: 0.3;
             animation: wallPulse 4s ease-in-out infinite;
         }
@@ -123,6 +97,7 @@
             transform-style: preserve-3d;
             animation: cubeFloat 15s ease-in-out infinite;
             opacity: 0.3;
+            pointer-events: none;
         }
 
         .grid-cube .face {
@@ -147,7 +122,6 @@
             75% { transform: rotateX(270deg) rotateY(135deg) translateY(30px); }
         }
 
-        /* Scan Lines */
         .scan-line {
             position: fixed;
             width: 100%;
@@ -156,6 +130,7 @@
             box-shadow: var(--glow);
             animation: scanVertical 8s linear infinite;
             opacity: 0.6;
+            pointer-events: none;
         }
 
         @keyframes scanVertical {
@@ -176,7 +151,6 @@
             background: rgba(2, 2, 4, 0.9);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--wire-bright);
-            transform: translateZ(50px);
         }
 
         .nav-content {
@@ -203,6 +177,7 @@
             transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
+            cursor: pointer;
         }
 
         .nav-links a::before {
@@ -265,9 +240,6 @@
                 transform: translateZ(-200px) rotateX(20deg);
                 filter: blur(10px);
             }
-            50% {
-                filter: blur(2px);
-            }
             100% {
                 opacity: 1;
                 transform: translateZ(0) rotateX(0deg);
@@ -295,13 +267,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: textGlitch 5s ease-in-out infinite;
-        }
-
-        @keyframes textGlitch {
-            0%, 90%, 100% { text-shadow: none; }
-            92% { text-shadow: 2px 0 var(--secondary), -2px 0 var(--accent); }
-            94% { text-shadow: -2px 0 var(--secondary), 2px 0 var(--accent); }
         }
 
         .hero-text .role {
@@ -353,27 +318,11 @@
             overflow: hidden;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 40%, rgba(0, 255, 136, 0.1) 50%, transparent 60%);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
         .btn:hover {
             background: var(--primary);
             color: var(--darker);
-            box-shadow: var(--glow-strong), inset 0 0 20px rgba(0, 255, 136, 0.3);
-            transform: translateZ(20px);
-        }
-
-        .btn:hover::before {
-            transform: translateX(100%);
+            box-shadow: var(--glow-strong);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
@@ -407,7 +356,6 @@
             50% { transform: translateY(-15px) rotateY(5deg); }
         }
 
-        /* Wireframe Border */
         .wireframe-border {
             position: absolute;
             top: -20px;
@@ -415,7 +363,6 @@
             right: -20px;
             bottom: -20px;
             border: 1px solid var(--primary);
-            transform: translateZ(-20px);
             animation: wireframePulse 3s ease-in-out infinite;
         }
 
@@ -431,7 +378,6 @@
             left: 10px;
             right: 10px;
             bottom: 10px;
-            transform: translateZ(10px);
         }
 
         .wireframe-border::after {
@@ -439,7 +385,6 @@
             left: 20px;
             right: 20px;
             bottom: 20px;
-            transform: translateZ(20px);
             border-color: var(--secondary);
             opacity: 0.5;
         }
@@ -463,7 +408,6 @@
             transform: scale(1.02);
         }
 
-        /* Corner Markers */
         .corner-marker {
             position: absolute;
             width: 20px;
@@ -512,14 +456,8 @@
             background: linear-gradient(90deg, transparent, var(--primary));
         }
 
-        .section-header h2::before {
-            right: calc(100% + 20px);
-        }
-
-        .section-header h2::after {
-            left: calc(100% + 20px);
-            background: linear-gradient(90deg, var(--primary), transparent);
-        }
+        .section-header h2::before { right: calc(100% + 20px); }
+        .section-header h2::after { left: calc(100% + 20px); background: linear-gradient(90deg, var(--primary), transparent); }
 
         .section-header p {
             color: #666;
@@ -536,6 +474,7 @@
             position: relative;
             transform-style: preserve-3d;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
         }
 
         .card-3d::before {
@@ -561,13 +500,25 @@
         .card-3d:hover {
             transform: translateZ(30px) rotateX(2deg) rotateY(-2deg);
             border-color: var(--primary);
-            box-shadow: 
-                var(--glow),
-                0 25px 50px rgba(0, 0, 0, 0.5),
-                inset 0 0 30px rgba(0, 255, 136, 0.05);
+            box-shadow: var(--glow), 0 25px 50px rgba(0, 0, 0, 0.5);
         }
 
-        /* Expertise Grid */
+        .click-hint {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-3d:hover .click-hint {
+            opacity: 1;
+        }
+
+        /* Skills Grid */
         #expertise {
             background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 136, 0.02) 50%, transparent 100%);
         }
@@ -639,12 +590,6 @@
             font-size: 0.7rem;
             color: var(--primary);
             font-family: 'Space Mono', monospace;
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover .skill-tag {
-            background: rgba(0, 255, 136, 0.2);
-            box-shadow: var(--glow);
         }
 
         /* Experience Timeline */
@@ -686,29 +631,13 @@
         .timeline-item:nth-child(6) { animation-delay: 0.6s; }
 
         @keyframes timelineEmerge {
-            0% {
-                opacity: 0;
-                transform: translateX(-50px) translateZ(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0) translateZ(0);
-            }
+            0% { opacity: 0; transform: translateX(-50px) translateZ(-50px); }
+            100% { opacity: 1; transform: translateX(0) translateZ(0); }
         }
 
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            text-align: right;
-            padding-right: 3rem;
-            padding-left: 0;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            padding-left: 3rem;
-        }
+        .timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+        .timeline-item:nth-child(odd) .timeline-content { text-align: right; padding-right: 3rem; padding-left: 0; }
+        .timeline-item:nth-child(even) .timeline-content { padding-left: 3rem; }
 
         .timeline-content {
             width: 50%;
@@ -716,6 +645,7 @@
             background: rgba(10, 10, 15, 0.9);
             border: 1px solid var(--wire-bright);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .timeline-content:hover {
@@ -822,16 +752,6 @@
             line-height: 1.5;
         }
 
-        .research-card h3 a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .research-card h3 a:hover {
-            color: var(--primary);
-        }
-
         .research-card .authors {
             color: #666;
             font-size: 0.85rem;
@@ -863,7 +783,7 @@
             overflow: hidden;
             transition: all 0.5s ease;
             position: relative;
-            transform-style: preserve-3d;
+            cursor: pointer;
             opacity: 0;
             animation: cardEmerge 0.8s ease-out forwards;
         }
@@ -876,7 +796,7 @@
         .project-card:nth-child(6) { animation-delay: 0.6s; }
 
         .project-card:hover {
-            transform: translateZ(40px) rotateX(5deg);
+            transform: translateY(-10px);
             border-color: var(--primary);
             box-shadow: var(--glow), 0 30px 60px rgba(0, 0, 0, 0.5);
         }
@@ -907,9 +827,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                linear-gradient(180deg, transparent 0%, rgba(2, 2, 4, 0.9) 100%),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 136, 0.03) 2px, rgba(0, 255, 136, 0.03) 4px);
+            background: linear-gradient(180deg, transparent 0%, rgba(2, 2, 4, 0.9) 100%);
         }
 
         .project-info {
@@ -947,7 +865,7 @@
             padding: 1.5rem;
             text-align: center;
             transition: all 0.4s ease;
-            transform-style: preserve-3d;
+            cursor: pointer;
             opacity: 0;
             animation: cardEmerge 0.6s ease-out forwards;
         }
@@ -962,28 +880,14 @@
         .award-card:nth-child(8) { animation-delay: 0.4s; }
 
         .award-card:hover {
-            transform: translateZ(30px);
+            transform: translateY(-5px);
             border-color: var(--accent);
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
         }
 
-        .award-card .trophy {
-            font-size: 2.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .award-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--light);
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .award-card .year {
-            font-family: 'Space Mono', monospace;
-            color: var(--accent);
-            font-size: 0.7rem;
-        }
+        .award-card .trophy { font-size: 2.5rem; margin-bottom: 0.75rem; }
+        .award-card h3 { font-family: 'Orbitron', sans-serif; color: var(--light); font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .award-card .year { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 0.7rem; }
 
         /* Contact Section */
         #contact {
@@ -1010,14 +914,154 @@
             border: 1px solid var(--wire-bright);
             background: rgba(10, 10, 15, 0.8);
             transition: all 0.3s ease;
-            transform-style: preserve-3d;
         }
 
         .contact-link:hover {
             border-color: var(--primary);
             color: var(--primary);
             box-shadow: var(--glow);
-            transform: translateZ(20px);
+            transform: translateY(-3px);
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 2, 4, 0.95);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: rgba(10, 10, 15, 0.95);
+            border: 1px solid var(--primary);
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            transform: translateZ(-100px) rotateX(10deg) scale(0.9);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--glow-strong), 0 0 100px rgba(0, 255, 136, 0.2);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateZ(0) rotateX(0deg) scale(1);
+            opacity: 1;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: var(--primary);
+            color: var(--darker);
+        }
+
+        .modal-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--wire-bright);
+        }
+
+        .modal-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header .subtitle {
+            font-family: 'Space Mono', monospace;
+            color: var(--secondary);
+            font-size: 0.85rem;
+        }
+
+        .modal-body {
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        .modal-body h4 {
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+        }
+
+        .modal-body ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .modal-body li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-body li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .modal-body a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .modal-body a:hover {
+            border-bottom-color: var(--primary);
+        }
+
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .modal-tag {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-family: 'Space Mono', monospace;
         }
 
         /* Footer */
@@ -1036,42 +1080,17 @@
 
         /* Responsive */
         @media (max-width: 968px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
             .hero-text h1 { font-size: 2.5rem; }
             .cta-buttons { justify-content: center; }
-
             .timeline::before { left: 20px; }
-
-            .timeline-item,
-            .timeline-item:nth-child(odd) {
-                flex-direction: column;
+            .timeline-item, .timeline-item:nth-child(odd) { flex-direction: column; }
+            .timeline-content, .timeline-item:nth-child(odd) .timeline-content {
+                width: 100%; padding-left: 3rem !important; padding-right: 1rem !important; text-align: left !important;
             }
-
-            .timeline-content,
-            .timeline-item:nth-child(odd) .timeline-content {
-                width: 100%;
-                padding-left: 3rem !important;
-                padding-right: 1rem !important;
-                text-align: left !important;
-            }
-
             .timeline-dot { left: 20px; }
-
-            .timeline-item:nth-child(odd) .timeline-content li {
-                padding-left: 1.2rem;
-                padding-right: 0;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content li::before {
-                left: 0;
-                right: auto;
-                content: '▸';
-            }
-
+            .timeline-item:nth-child(odd) .timeline-content li { padding-left: 1.2rem; padding-right: 0; }
+            .timeline-item:nth-child(odd) .timeline-content li::before { left: 0; right: auto; content: '▸'; }
             .nav-links { display: none; }
             .grid-cube { display: none; }
         }
@@ -1091,31 +1110,15 @@
 
     <!-- Floating 3D Cubes -->
     <div class="grid-cube" style="left: 10%; top: 20%;">
-        <div class="face front"></div>
-        <div class="face back"></div>
-        <div class="face left"></div>
-        <div class="face right"></div>
-        <div class="face top"></div>
-        <div class="face bottom"></div>
+        <div class="face front"></div><div class="face back"></div><div class="face left"></div><div class="face right"></div><div class="face top"></div><div class="face bottom"></div>
     </div>
     <div class="grid-cube" style="right: 15%; top: 30%; animation-delay: -5s;">
-        <div class="face front"></div>
-        <div class="face back"></div>
-        <div class="face left"></div>
-        <div class="face right"></div>
-        <div class="face top"></div>
-        <div class="face bottom"></div>
+        <div class="face front"></div><div class="face back"></div><div class="face left"></div><div class="face right"></div><div class="face top"></div><div class="face bottom"></div>
     </div>
     <div class="grid-cube" style="left: 20%; bottom: 25%; animation-delay: -10s;">
-        <div class="face front"></div>
-        <div class="face back"></div>
-        <div class="face left"></div>
-        <div class="face right"></div>
-        <div class="face top"></div>
-        <div class="face bottom"></div>
+        <div class="face front"></div><div class="face back"></div><div class="face left"></div><div class="face right"></div><div class="face top"></div><div class="face bottom"></div>
     </div>
 
-    <!-- Scan Line -->
     <div class="scan-line"></div>
 
     <!-- Navigation -->
@@ -1132,6 +1135,18 @@
         </div>
     </nav>
 
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-header">
+                <h3 id="modal-title">Title</h3>
+                <div class="subtitle" id="modal-subtitle">Subtitle</div>
+            </div>
+            <div class="modal-body" id="modal-body">Content</div>
+        </div>
+    </div>
+
     <main>
         <!-- Hero Section -->
         <section class="hero" id="home">
@@ -1145,8 +1160,8 @@
                         Designing intelligent systems at the intersection of perception and cognition. Specialized in 3D scene understanding, Visual-Inertial Odometry, SLAM, and building AI architectures that bridge spatial reasoning with cognitive frameworks.
                     </p>
                     <div class="cta-buttons">
-                        <a href="#research" class="btn">[View Research]</a>
-                        <a href="#contact" class="btn btn-secondary">[Contact]</a>
+                        <button class="btn" onclick="document.getElementById('research').scrollIntoView({behavior: 'smooth'})">[View Research]</button>
+                        <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">[Contact]</button>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -1169,65 +1184,71 @@
                 <p>Core competencies in AI architecture and cognitive systems</p>
             </div>
             <div class="skills-grid">
-                <div class="skill-card card-3d">
+                <div class="skill-card card-3d" onclick="showSkillModal('cognitive')">
                     <span class="icon">🧠</span>
                     <h3>AI Cognitive Systems</h3>
-                    <p>Designing brain-inspired architectures that bridge perception with reasoning. Published research on cognitive frameworks.</p>
+                    <p>Designing brain-inspired architectures that bridge perception with reasoning.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">XAI</span>
                         <span class="skill-tag">Cognitive AI</span>
                         <span class="skill-tag">Reasoning</span>
                     </div>
+                    <span class="click-hint">[Click for details]</span>
                 </div>
-                <div class="skill-card card-3d">
+                <div class="skill-card card-3d" onclick="showSkillModal('slam')">
                     <span class="icon">📡</span>
                     <h3>3D Reconstruction & SLAM</h3>
-                    <p>Real-time 3D scene understanding, depth estimation, and simultaneous localization and mapping.</p>
+                    <p>Real-time 3D scene understanding, depth estimation, and localization.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">SLAM</span>
                         <span class="skill-tag">LiDAR</span>
                         <span class="skill-tag">Point Cloud</span>
                     </div>
+                    <span class="click-hint">[Click for details]</span>
                 </div>
-                <div class="skill-card card-3d">
+                <div class="skill-card card-3d" onclick="showSkillModal('vlm')">
                     <span class="icon">🔮</span>
                     <h3>Vision-Language Models</h3>
-                    <p>Multi-modal AI systems that understand and reason about visual scenes through natural language.</p>
+                    <p>Multi-modal AI systems that understand visual scenes through language.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">VLMs</span>
                         <span class="skill-tag">Transformers</span>
                         <span class="skill-tag">Diffusion</span>
                     </div>
+                    <span class="click-hint">[Click for details]</span>
                 </div>
-                <div class="skill-card card-3d">
+                <div class="skill-card card-3d" onclick="showSkillModal('nav')">
                     <span class="icon">🚁</span>
                     <h3>Autonomous Navigation</h3>
-                    <p>Visual-Inertial Odometry, sensor fusion, and motion planning for UAVs in GPS-denied environments.</p>
+                    <p>Visual-Inertial Odometry, sensor fusion, and motion planning for UAVs.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">VIO</span>
                         <span class="skill-tag">ROS2</span>
                         <span class="skill-tag">MAVLink</span>
                     </div>
+                    <span class="click-hint">[Click for details]</span>
                 </div>
-                <div class="skill-card card-3d">
+                <div class="skill-card card-3d" onclick="showSkillModal('edge')">
                     <span class="icon">⚡</span>
                     <h3>Edge AI Architecture</h3>
-                    <p>Optimizing neural networks for real-time inference on embedded systems and edge devices.</p>
+                    <p>Optimizing neural networks for real-time inference on embedded systems.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">Jetson</span>
                         <span class="skill-tag">TensorRT</span>
                         <span class="skill-tag">ONNX</span>
                     </div>
+                    <span class="click-hint">[Click for details]</span>
                 </div>
-                <div class="skill-card card-3d">
+                <div class="skill-card card-3d" onclick="showSkillModal('research')">
                     <span class="icon">🔬</span>
                     <h3>Research & Innovation</h3>
-                    <p>Published researcher with peer-reviewed contributions to IEEE and Springer Nature.</p>
+                    <p>Published researcher with contributions to IEEE and Springer Nature.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">IEEE</span>
                         <span class="skill-tag">Springer</span>
                         <span class="skill-tag">Ph.D.</span>
                     </div>
+                    <span class="click-hint">[Click for details]</span>
                 </div>
             </div>
         </section>
@@ -1240,7 +1261,7 @@
             </div>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-content">
+                    <div class="timeline-content" onclick="showExpModal('flyx')">
                         <h3>Machine Learning Engineer</h3>
                         <div class="company">FlyX Technologies, Sunnyvale, CA</div>
                         <div class="date">May 2025 - Present</div>
@@ -1253,7 +1274,7 @@
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-content">
+                    <div class="timeline-content" onclick="showExpModal('catchup')">
                         <h3>Machine Learning Engineer</h3>
                         <div class="company">Catch up AI, San Francisco</div>
                         <div class="date">Jan 2024 - Present</div>
@@ -1266,7 +1287,7 @@
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-content">
+                    <div class="timeline-content" onclick="showExpModal('ilead')">
                         <h3>ML Researcher</h3>
                         <div class="company">ILead Lab, Oklahoma State</div>
                         <div class="date">May 2023 - Apr 2024</div>
@@ -1278,7 +1299,7 @@
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-content">
+                    <div class="timeline-content" onclick="showExpModal('sanborn')">
                         <h3>Computer Vision Engineer</h3>
                         <div class="company">Sanborn, Colorado Springs</div>
                         <div class="date">May - Aug 2022</div>
@@ -1290,7 +1311,7 @@
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-content">
+                    <div class="timeline-content" onclick="showExpModal('ge')">
                         <h3>CV Engineer</h3>
                         <div class="company">General Electric</div>
                         <div class="date">May - Sep 2020</div>
@@ -1302,7 +1323,7 @@
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-content">
+                    <div class="timeline-content" onclick="showExpModal('atrc')">
                         <h3>Research Engineer</h3>
                         <div class="company">ATRC (US Air Force)</div>
                         <div class="date">May 2018 - Aug 2019</div>
@@ -1323,23 +1344,26 @@
                 <p>Peer-reviewed publications in AI and cognitive systems</p>
             </div>
             <div class="research-grid">
-                <div class="research-card card-3d">
+                <div class="research-card card-3d" onclick="showResearchModal('xai')">
                     <div class="venue">Springer Nature • Jan 2025</div>
-                    <h3><a href="https://link.springer.com/article/10.1186/s42467-024-00016-5" target="_blank">Towards Responsible AI: Integrating Explainability and Social-Cognitive Frameworks</a></h3>
+                    <h3>Towards Responsible AI: Integrating Explainability and Social-Cognitive Frameworks</h3>
                     <div class="authors">R. Shamsuddin, <strong>A. Boloorchi</strong>, P.R. Gottimukkula</div>
                     <p class="summary">Framework for explainable AI systems with social-cognitive considerations.</p>
+                    <span class="click-hint">[Click for details]</span>
                 </div>
-                <div class="research-card card-3d">
+                <div class="research-card card-3d" onclick="showResearchModal('vio')">
                     <div class="venue">IEEE CSCI • Dec 2023</div>
-                    <h3><a href="#" target="_blank">Brain-Inspired Visual Odometry: Balancing Speed and Interpretability</a></h3>
+                    <h3>Brain-Inspired Visual Odometry: Balancing Speed and Interpretability</h3>
                     <div class="authors"><strong>A. Boloorchi Tabrizi</strong>, C. Crick</div>
                     <p class="summary">Brain-inspired architecture combining efficiency with cognitive interpretability.</p>
+                    <span class="click-hint">[Click for details]</span>
                 </div>
-                <div class="research-card card-3d">
+                <div class="research-card card-3d" onclick="showResearchModal('protein')">
                     <div class="venue">IEEE BIBM • Dec 2023</div>
-                    <h3><a href="https://ieeexplore.ieee.org/abstract/document/10385640" target="_blank">Enhancing ProteinBERT for Comprehensive Proteomic Predictions</a></h3>
+                    <h3>Enhancing ProteinBERT for Comprehensive Proteomic Predictions</h3>
                     <div class="authors">J.D. Stone, <strong>A. Boloorchi Tabrizi</strong>, R. Shamsuddin</div>
                     <p class="summary">Extended transformer for protein language modeling.</p>
+                    <span class="click-hint">[Click for details]</span>
                 </div>
             </div>
         </section>
@@ -1351,11 +1375,9 @@
                 <p>From research prototypes to deployed systems</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" onclick="showProjectModal('vio')">
                     <div class="project-media">
-                        <video playsinline muted autoplay loop>
-                            <source src="images/VIO.mp4" type="video/mp4">
-                        </video>
+                        <video playsinline muted autoplay loop><source src="images/VIO.mp4" type="video/mp4"></video>
                         <div class="project-overlay"></div>
                     </div>
                     <div class="project-info">
@@ -1363,11 +1385,29 @@
                         <p>Real-time 3D navigation for GPS-denied environments</p>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" onclick="showProjectModal('3drecon')">
                     <div class="project-media">
-                        <video playsinline muted autoplay loop>
-                            <source src="images/Nao_Self_Calibration.mp4" type="video/mp4">
-                        </video>
+                        <video playsinline muted autoplay loop><source src="images/3D_reconstruction.mp4" type="video/mp4"></video>
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>3D Reconstruction</h3>
+                        <p>Real-time point cloud generation and mesh reconstruction</p>
+                    </div>
+                </div>
+                <div class="project-card" onclick="showProjectModal('stereo')">
+                    <div class="project-media">
+                        <video playsinline muted autoplay loop><source src="images/Sterocamera.mp4" type="video/mp4"></video>
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Stereo Depth Estimation</h3>
+                        <p>Real-time depth mapping from stereo camera pairs</p>
+                    </div>
+                </div>
+                <div class="project-card" onclick="showProjectModal('nao')">
+                    <div class="project-media">
+                        <video playsinline muted autoplay loop><source src="images/Nao_Self_Calibration.mp4" type="video/mp4"></video>
                         <div class="project-overlay"></div>
                     </div>
                     <div class="project-info">
@@ -1375,11 +1415,9 @@
                         <p>Automated humanoid self-calibration</p>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" onclick="showProjectModal('arm')">
                     <div class="project-media">
-                        <video playsinline muted autoplay loop>
-                            <source src="images/Arm_Robot.mp4" type="video/mp4">
-                        </video>
+                        <video playsinline muted autoplay loop><source src="images/Arm_Robot.mp4" type="video/mp4"></video>
                         <div class="project-overlay"></div>
                     </div>
                     <div class="project-info">
@@ -1387,7 +1425,7 @@
                         <p>Precision industrial control</p>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" onclick="showProjectModal('sightvoice')">
                     <div class="project-media">
                         <img src="images/sightvoice.jpg" alt="SightVoice" onerror="this.src='https://via.placeholder.com/400x180/020204/00ff88?text=SightVoice'">
                         <div class="project-overlay"></div>
@@ -1397,7 +1435,7 @@
                         <p>AI visual assistant for visually impaired</p>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" onclick="showProjectModal('nasa')">
                     <div class="project-media">
                         <img src="images/nasa.jpg" alt="NASA" onerror="this.src='https://via.placeholder.com/400x180/020204/00ff88?text=NASA'">
                         <div class="project-overlay"></div>
@@ -1407,7 +1445,7 @@
                         <p>CAD modeling & AR prototype</p>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" onclick="showProjectModal('drone')">
                     <div class="project-media">
                         <img src="images/drone.jpg" alt="Drone" onerror="this.src='https://via.placeholder.com/400x180/020204/00ff88?text=Drone'">
                         <div class="project-overlay"></div>
@@ -1427,42 +1465,42 @@
                 <p>Recognition for innovation and excellence</p>
             </div>
             <div class="awards-grid">
-                <div class="award-card">
+                <div class="award-card" onclick="showAwardModal('acm')">
                     <div class="trophy">🥈</div>
                     <h3>2nd Place ACM Hackathon</h3>
                     <div class="year">Gen AI/VLM • Apr 2025</div>
                 </div>
-                <div class="award-card">
+                <div class="award-card" onclick="showAwardModal('health')">
                     <div class="trophy">🏆</div>
                     <h3>1st Teamwork AI+ Health</h3>
                     <div class="year">Visual Assistant • Dec 2024</div>
                 </div>
-                <div class="award-card">
+                <div class="award-card" onclick="showAwardModal('startup')">
                     <div class="trophy">🎯</div>
                     <h3>Top-5 Startup Hackathon</h3>
                     <div class="year">Unified.to • Dec 2024</div>
                 </div>
-                <div class="award-card">
+                <div class="award-card" onclick="showAwardModal('hiti')">
                     <div class="trophy">🎓</div>
                     <h3>Health AI Bias Scholarship</h3>
                     <div class="year">HITI Lab • Aug 2024</div>
                 </div>
-                <div class="award-card">
+                <div class="award-card" onclick="showAwardModal('icorps')">
                     <div class="trophy">💡</div>
                     <h3>2× I-Corps Scholarships</h3>
                     <div class="year">2024</div>
                 </div>
-                <div class="award-card">
+                <div class="award-card" onclick="showAwardModal('business')">
                     <div class="trophy">🥉</div>
                     <h3>3rd Business Plan</h3>
                     <div class="year">OSU • 2022</div>
                 </div>
-                <div class="award-card">
+                <div class="award-card" onclick="showAwardModal('robotics')">
                     <div class="trophy">🥇</div>
                     <h3>1st Robotics League</h3>
                     <div class="year">Soccer • 2016</div>
                 </div>
-                <div class="award-card">
+                <div class="award-card" onclick="showAwardModal('finalist')">
                     <div class="trophy">🌟</div>
                     <h3>4× Business Finalist</h3>
                     <div class="year">OSU • 2022-25</div>
@@ -1477,10 +1515,10 @@
                 <p>Let's architect intelligent systems together</p>
             </div>
             <div class="contact-links">
-                <a href="mailto:AraasBoloorchi@gmail.com" class="contact-link">📧 Email</a>
+                <a href="mailto:AraasBoloorchi@gmail.com" class="contact-link">📧 AraasBoloorchi@gmail.com</a>
                 <a href="https://www.linkedin.com/in/araas-boloorchi" target="_blank" class="contact-link">💼 LinkedIn</a>
                 <a href="https://github.com/Araas-Boloorchi" target="_blank" class="contact-link">💻 GitHub</a>
-                <a href="https://scholar.google.com/citations?user=0oXdUkAAAAAJ&hl=en" target="_blank" class="contact-link">📚 Scholar</a>
+                <a href="https://scholar.google.com/citations?user=0oXdUkAAAAAJ&hl=en" target="_blank" class="contact-link">📚 Google Scholar</a>
             </div>
         </section>
     </main>
@@ -1490,11 +1528,541 @@
     </footer>
 
     <script>
-        // Smooth scroll
+        // Modal Data
+        const modalData = {
+            skills: {
+                cognitive: {
+                    title: 'AI Cognitive Systems',
+                    subtitle: 'Brain-Inspired AI Architecture',
+                    body: `<p>Designing AI systems that mirror human cognitive processes, bridging the gap between perception and reasoning.</p>
+                    <h4>Core Capabilities</h4>
+                    <ul>
+                        <li>Explainable AI (XAI) frameworks for transparent decision-making</li>
+                        <li>Social-cognitive models for responsible AI deployment</li>
+                        <li>Brain-inspired neural architectures</li>
+                        <li>Interpretable deep learning systems</li>
+                    </ul>
+                    <h4>Key Publication</h4>
+                    <p>"Towards Responsible AI" - Springer Nature Journal, 2025</p>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Explainable AI</span>
+                        <span class="modal-tag">Cognitive Science</span>
+                        <span class="modal-tag">Neural Networks</span>
+                        <span class="modal-tag">Interpretability</span>
+                    </div>`
+                },
+                slam: {
+                    title: '3D Reconstruction & SLAM',
+                    subtitle: 'Spatial Intelligence Systems',
+                    body: `<p>Building real-time 3D understanding systems for autonomous navigation and spatial computing.</p>
+                    <h4>Technical Expertise</h4>
+                    <ul>
+                        <li>Simultaneous Localization and Mapping (SLAM)</li>
+                        <li>LiDAR and stereo vision point cloud processing</li>
+                        <li>Real-time depth estimation algorithms</li>
+                        <li>3D scene reconstruction from multi-view imagery</li>
+                        <li>Isaac ROS integration on NVIDIA Jetson</li>
+                    </ul>
+                    <h4>Applications</h4>
+                    <ul>
+                        <li>Autonomous drone navigation</li>
+                        <li>Infrastructure inspection</li>
+                        <li>Augmented reality systems</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">SLAM</span>
+                        <span class="modal-tag">LiDAR</span>
+                        <span class="modal-tag">Point Cloud</span>
+                        <span class="modal-tag">Stereo Vision</span>
+                        <span class="modal-tag">Open3D</span>
+                    </div>`
+                },
+                vlm: {
+                    title: 'Vision-Language Models',
+                    subtitle: 'Multi-Modal AI Systems',
+                    body: `<p>Developing AI systems that bridge visual perception with natural language understanding.</p>
+                    <h4>Areas of Focus</h4>
+                    <ul>
+                        <li>Vision Transformers (ViT) and CLIP architectures</li>
+                        <li>Visual question answering systems</li>
+                        <li>Image captioning and scene description</li>
+                        <li>Diffusion models for generative AI</li>
+                        <li>Cross-modal learning and reasoning</li>
+                    </ul>
+                    <h4>Recent Work</h4>
+                    <p>2nd Place at ACM Hackathon for VLM-based generative AI application (Apr 2025)</p>
+                    <div class="modal-tags">
+                        <span class="modal-tag">VLMs</span>
+                        <span class="modal-tag">Transformers</span>
+                        <span class="modal-tag">CLIP</span>
+                        <span class="modal-tag">Diffusion</span>
+                        <span class="modal-tag">Generative AI</span>
+                    </div>`
+                },
+                nav: {
+                    title: 'Autonomous Navigation',
+                    subtitle: 'UAV & Robotics Systems',
+                    body: `<p>Developing navigation systems for autonomous robots and drones in challenging environments.</p>
+                    <h4>Technical Stack</h4>
+                    <ul>
+                        <li>Visual-Inertial Odometry (VIO) algorithms</li>
+                        <li>Sensor fusion with Kalman filtering</li>
+                        <li>ROS2 and MAVLink integration</li>
+                        <li>GPS-denied navigation solutions</li>
+                        <li>Motion planning and trajectory optimization</li>
+                    </ul>
+                    <h4>Hardware Experience</h4>
+                    <ul>
+                        <li>NVIDIA Jetson Orin / Nano</li>
+                        <li>Intel RealSense D435I cameras</li>
+                        <li>CubePilot Orange / Pixhawk autopilots</li>
+                        <li>PCA9685 servo controllers</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">VIO</span>
+                        <span class="modal-tag">ROS2</span>
+                        <span class="modal-tag">MAVLink</span>
+                        <span class="modal-tag">Sensor Fusion</span>
+                        <span class="modal-tag">Jetson</span>
+                    </div>`
+                },
+                edge: {
+                    title: 'Edge AI Architecture',
+                    subtitle: 'Embedded ML Systems',
+                    body: `<p>Optimizing AI models for deployment on resource-constrained edge devices.</p>
+                    <h4>Optimization Techniques</h4>
+                    <ul>
+                        <li>Model quantization and pruning</li>
+                        <li>TensorRT acceleration</li>
+                        <li>ONNX model conversion</li>
+                        <li>Real-time inference optimization</li>
+                        <li>Memory-efficient architectures</li>
+                    </ul>
+                    <h4>Platforms</h4>
+                    <ul>
+                        <li>NVIDIA Jetson family (Orin, Nano)</li>
+                        <li>Edge TPU devices</li>
+                        <li>ARM-based embedded systems</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Jetson</span>
+                        <span class="modal-tag">TensorRT</span>
+                        <span class="modal-tag">ONNX</span>
+                        <span class="modal-tag">Quantization</span>
+                        <span class="modal-tag">Edge Computing</span>
+                    </div>`
+                },
+                research: {
+                    title: 'Research & Innovation',
+                    subtitle: 'Academic Contributions',
+                    body: `<p>Published researcher with peer-reviewed contributions to top-tier venues.</p>
+                    <h4>Publications</h4>
+                    <ul>
+                        <li><strong>Springer Nature Journal (2025)</strong> - Explainable AI frameworks</li>
+                        <li><strong>IEEE CSCI (2023)</strong> - Brain-inspired visual odometry</li>
+                        <li><strong>IEEE BIBM (2023)</strong> - Protein language modeling</li>
+                    </ul>
+                    <h4>Education</h4>
+                    <p><strong>Ph.D. & M.S. Computer Science</strong><br>Oklahoma State University, 2025</p>
+                    <p><em>Dissertation: Explainable AI in Visual Odometry and Generative AI for Navigation of Autonomous Drones</em></p>
+                    <div class="modal-tags">
+                        <span class="modal-tag">IEEE</span>
+                        <span class="modal-tag">Springer Nature</span>
+                        <span class="modal-tag">Ph.D.</span>
+                        <span class="modal-tag">Peer-Reviewed</span>
+                    </div>`
+                }
+            },
+            experience: {
+                flyx: {
+                    title: 'Machine Learning Engineer',
+                    subtitle: 'FlyX Technologies • May 2025 - Present',
+                    body: `<p>Building autonomous drone systems for infrastructure inspection.</p>
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>Engineered Isaac ROS Visual SLAM pipeline on NVIDIA Jetson Orin with Intel RealSense D435I for real-time 3D mapping</li>
+                        <li>Developed MAVLink-based flight control system integrating Jetson with CubePilot Orange autopilot</li>
+                        <li>Built WebRTC video streaming system for real-time sensor data transmission</li>
+                        <li>Implemented ROS 2 servo control with PCA9685 PWM drivers</li>
+                        <li>Fine-tuned YOLO for power line anomaly detection on edge devices</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Isaac ROS</span>
+                        <span class="modal-tag">SLAM</span>
+                        <span class="modal-tag">MAVLink</span>
+                        <span class="modal-tag">Jetson Orin</span>
+                        <span class="modal-tag">WebRTC</span>
+                    </div>`
+                },
+                catchup: {
+                    title: 'Machine Learning Engineer',
+                    subtitle: 'Catch up AI • Jan 2024 - Present',
+                    body: `<p>Leading ML development for enterprise communication analytics.</p>
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>Led 4-engineer ML team from concept to production MVP in 12 weeks</li>
+                        <li>Architected sentiment analysis pipeline processing Jira, Slack, and Zoom data</li>
+                        <li>Improved precision from 0.71 → 0.86 (+21%) through advanced prompt engineering</li>
+                        <li>Implemented PyTorch GNN to model organizational social graphs</li>
+                        <li>Boosted recommendation accuracy by 22%</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">PyTorch</span>
+                        <span class="modal-tag">GNN</span>
+                        <span class="modal-tag">NLP</span>
+                        <span class="modal-tag">Sentiment Analysis</span>
+                        <span class="modal-tag">Team Lead</span>
+                    </div>`
+                },
+                ilead: {
+                    title: 'ML Researcher',
+                    subtitle: 'ILead Lab, Oklahoma State • May 2023 - Apr 2024',
+                    body: `<p>Research on explainable AI and medical imaging.</p>
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>Developed CV algorithm for statistical chart analysis (94% accuracy, 91% interpretability)</li>
+                        <li>Built explainable AI model for document recognition with full inference traceability</li>
+                        <li>Enhanced YOLO-based breast cancer detection, improving recall by 7%</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Explainable AI</span>
+                        <span class="modal-tag">Medical Imaging</span>
+                        <span class="modal-tag">YOLO</span>
+                        <span class="modal-tag">Document Analysis</span>
+                    </div>`
+                },
+                sanborn: {
+                    title: 'Computer Vision Engineer',
+                    subtitle: 'Sanborn • May - Aug 2022',
+                    body: `<p>Developing perception systems for autonomous vehicles.</p>
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>Fine-tuned stereo depth estimation models, reducing inference latency by 30%</li>
+                        <li>Developed OpenCV stereo matching and 3D reconstruction pipeline</li>
+                        <li>Improved downstream perception accuracy by 15%</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Depth Estimation</span>
+                        <span class="modal-tag">Stereo Vision</span>
+                        <span class="modal-tag">OpenCV</span>
+                        <span class="modal-tag">Autonomous Vehicles</span>
+                    </div>`
+                },
+                ge: {
+                    title: 'Computer Vision Engineer',
+                    subtitle: 'General Electric • May - Sep 2020',
+                    body: `<p>Building industrial inspection systems.</p>
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>Designed end-to-end CV system for oil drill bit reliability analysis</li>
+                        <li>Shipped production mobile application achieving 88% F1 score</li>
+                        <li>Enabled predictive maintenance from visual inspection</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Industrial CV</span>
+                        <span class="modal-tag">Mobile App</span>
+                        <span class="modal-tag">Predictive Maintenance</span>
+                    </div>`
+                },
+                atrc: {
+                    title: 'Research Engineer',
+                    subtitle: 'ATRC (US Air Force) • May 2018 - Aug 2019',
+                    body: `<p>Developing novel navigation systems under US Air Force funding.</p>
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>Developed novel sensor fusion methodology for Visual-Inertial Odometry</li>
+                        <li>Reduced computational complexity by 5% while maintaining precision</li>
+                        <li>Built real-time SLAM prototype for GPS-denied drone navigation</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">VIO</span>
+                        <span class="modal-tag">SLAM</span>
+                        <span class="modal-tag">Sensor Fusion</span>
+                        <span class="modal-tag">US Air Force</span>
+                    </div>`
+                }
+            },
+            research: {
+                xai: {
+                    title: 'Towards Responsible AI',
+                    subtitle: 'Springer Nature Journal • Jan 2025',
+                    body: `<p><strong>Full Title:</strong> Towards Responsible AI: An Implementable Blueprint for Integrating Explainability and Social-Cognitive Frameworks in AI Systems</p>
+                    <h4>Authors</h4>
+                    <p>R. Shamsuddin, <strong>A. Boloorchi</strong>, P.R. Gottimukkula</p>
+                    <h4>Abstract</h4>
+                    <p>This paper presents a comprehensive framework for building explainable AI systems that incorporate social-cognitive considerations for responsible deployment in real-world applications.</p>
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>Novel framework integrating XAI with social-cognitive theory</li>
+                        <li>Implementable blueprint for responsible AI development</li>
+                        <li>Guidelines for regulatory compliance</li>
+                    </ul>
+                    <p><a href="https://link.springer.com/article/10.1186/s42467-024-00016-5" target="_blank">Read Full Paper →</a></p>`
+                },
+                vio: {
+                    title: 'Brain-Inspired Visual Odometry',
+                    subtitle: 'IEEE CSCI • Dec 2023',
+                    body: `<p><strong>Full Title:</strong> Brain-Inspired Visual Odometry: Balancing Speed and Interpretability Through a System of Systems Approach</p>
+                    <h4>Authors</h4>
+                    <p><strong>A. Boloorchi Tabrizi</strong>, C. Crick</p>
+                    <h4>Abstract</h4>
+                    <p>A novel brain-inspired architecture for visual odometry that balances computational efficiency with cognitive interpretability for autonomous navigation systems.</p>
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>Brain-inspired neural architecture for VIO</li>
+                        <li>System of systems approach for modularity</li>
+                        <li>Improved interpretability without sacrificing speed</li>
+                    </ul>
+                    <p><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=0oXdUkAAAAAJ&citation_for_view=0oXdUkAAAAAJ:9yKSN-GCB0IC" target="_blank">View on Google Scholar →</a></p>`
+                },
+                protein: {
+                    title: 'Enhancing ProteinBERT',
+                    subtitle: 'IEEE BIBM • Dec 2023',
+                    body: `<p><strong>Full Title:</strong> Enhancing ProteinBERT: Integrating Intrinsically Disordered Proteins for Comprehensive Proteomic Predictions</p>
+                    <h4>Authors</h4>
+                    <p>J.D. Stone, <strong>A. Boloorchi Tabrizi</strong>, R. Shamsuddin</p>
+                    <h4>Abstract</h4>
+                    <p>Extended transformer-based protein language model to handle intrinsically disordered protein regions for improved proteomic predictions.</p>
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>Extended ProteinBERT architecture</li>
+                        <li>Handling of intrinsically disordered proteins</li>
+                        <li>Comprehensive proteomic prediction framework</li>
+                    </ul>
+                    <p><a href="https://ieeexplore.ieee.org/abstract/document/10385640" target="_blank">Read on IEEE →</a></p>`
+                }
+            },
+            projects: {
+                vio: {
+                    title: 'Visual-Inertial Odometry System',
+                    subtitle: 'Autonomous Navigation • 2019',
+                    body: `<p>Real-time 3D navigation system for autonomous drones in GPS-denied environments.</p>
+                    <h4>Technical Details</h4>
+                    <ul>
+                        <li>Custom sensor fusion algorithm combining visual and inertial data</li>
+                        <li>Real-time localization and mapping</li>
+                        <li>5% reduction in computational complexity</li>
+                        <li>Deployed on embedded hardware</li>
+                    </ul>
+                    <h4>Funded By</h4>
+                    <p>Advanced Technology Research Center (ATRC) under US Air Force Institute</p>`
+                },
+                '3drecon': {
+                    title: '3D Reconstruction Pipeline',
+                    subtitle: 'Point Cloud & Mesh Generation',
+                    body: `<p>Real-time 3D reconstruction system generating dense point clouds and mesh surfaces from sensor data.</p>
+                    <h4>Technical Details</h4>
+                    <ul>
+                        <li>Real-time point cloud generation from depth sensors</li>
+                        <li>Dense 3D mesh reconstruction algorithms</li>
+                        <li>Integration with Intel RealSense cameras</li>
+                        <li>GPU-accelerated processing pipeline</li>
+                        <li>Open3D visualization and processing</li>
+                    </ul>
+                    <h4>Applications</h4>
+                    <ul>
+                        <li>Autonomous navigation mapping</li>
+                        <li>Environment modeling for robotics</li>
+                        <li>AR/VR scene capture</li>
+                    </ul>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Point Cloud</span>
+                        <span class="modal-tag">Open3D</span>
+                        <span class="modal-tag">RealSense</span>
+                        <span class="modal-tag">GPU</span>
+                    </div>`
+                },
+                stereo: {
+                    title: 'Stereo Depth Estimation',
+                    subtitle: 'Real-time Depth Mapping',
+                    body: `<p>Real-time depth estimation system using stereo camera pairs for 3D perception.</p>
+                    <h4>Technical Details</h4>
+                    <ul>
+                        <li>Stereo matching algorithms (SGM, Census Transform)</li>
+                        <li>Real-time disparity map generation</li>
+                        <li>Depth colorization and visualization</li>
+                        <li>Camera calibration and rectification pipeline</li>
+                        <li>30% latency reduction through optimization</li>
+                    </ul>
+                    <h4>Experience</h4>
+                    <p>Developed during internship at Sanborn for autonomous vehicle perception systems.</p>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Stereo Vision</span>
+                        <span class="modal-tag">Depth Estimation</span>
+                        <span class="modal-tag">OpenCV</span>
+                        <span class="modal-tag">CUDA</span>
+                    </div>`
+                },
+                nao: {
+                    title: 'NAO Robot Self-Calibration',
+                    subtitle: 'Humanoid Robotics',
+                    body: `<p>Automated computer vision system for humanoid robot calibration.</p>
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Automated joint calibration using visual feedback</li>
+                        <li>Real-time pose estimation</li>
+                        <li>Self-correcting movement patterns</li>
+                    </ul>`
+                },
+                arm: {
+                    title: 'Robotic Arm Control System',
+                    subtitle: 'Industrial Robotics',
+                    body: `<p>Precision control system for industrial robotic arm applications.</p>
+                    <h4>Features</h4>
+                    <ul>
+                        <li>High-precision servo control</li>
+                        <li>Path planning and trajectory optimization</li>
+                        <li>Real-time feedback control loops</li>
+                    </ul>`
+                },
+                sightvoice: {
+                    title: 'SightVoice',
+                    subtitle: 'AI + Global Health Hackathon • Dec 2024',
+                    body: `<p>AI-powered platform leveraging computer vision to assist visually impaired individuals with real-time audio feedback.</p>
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Real-time obstacle detection</li>
+                        <li>Voice feedback system</li>
+                        <li>Apple Vision Pro integration</li>
+                        <li>Webcam-based prototype</li>
+                    </ul>
+                    <h4>Recognition</h4>
+                    <p>🏆 1st Place for Teamwork at AI+ Global Health Hackathon</p>`
+                },
+                nasa: {
+                    title: 'NASA Moon Station Project',
+                    subtitle: 'Space Exploration • Dec 2024',
+                    body: `<p>CAD modeling and AR prototype for lunar exploration vehicle and station.</p>
+                    <h4>Deliverables</h4>
+                    <ul>
+                        <li>SolidWorks CAD Model of lunar stations</li>
+                        <li>Space Exploration Vehicle design</li>
+                        <li>Augmented Reality prototype for visualization</li>
+                    </ul>
+                    <p><a href="https://www.youtube.com/watch?app=desktop&v=NDBrM3J_doM" target="_blank">Watch Project Video →</a></p>`
+                },
+                drone: {
+                    title: 'Autonomous Drone Navigation',
+                    subtitle: 'ATRC Research • 2019',
+                    body: `<p>Real-time SLAM software for autonomous drone flight in GPS-denied environments.</p>
+                    <h4>Technical Stack</h4>
+                    <ul>
+                        <li>Visual-Inertial Odometry software</li>
+                        <li>Real-time SLAM implementation</li>
+                        <li>Custom sensor fusion algorithms</li>
+                        <li>Embedded deployment on drone hardware</li>
+                    </ul>`
+                }
+            },
+            awards: {
+                acm: {
+                    title: '2nd Place - ACM Hackathon',
+                    subtitle: 'Generative AI/VLM • April 2025',
+                    body: `<p>Achieved 2nd place for developing a representative AI application using Vision-Language Models.</p>
+                    <h4>Project</h4>
+                    <p>Built a VLM-based generative AI application demonstrating advanced multi-modal reasoning capabilities.</p>`
+                },
+                health: {
+                    title: '1st Place Teamwork - AI+ Global Health',
+                    subtitle: 'Visual Assistant • December 2024',
+                    body: `<p>Won 1st place for teamwork at the AI+ Global Health Hackathon in San Francisco.</p>
+                    <h4>Project: SightVoice</h4>
+                    <p>Built an obstacle recognition prototype using webcam and Apple Vision Pro for visually impaired users in a 24-hour hackathon.</p>`
+                },
+                startup: {
+                    title: 'Top-5 Finalist - Startup Hackathon',
+                    subtitle: 'Unified.to Platform • December 2024',
+                    body: `<p>Achieved Top-5 Finalist position and 1st place in the Unified.to platform category.</p>
+                    <h4>Project</h4>
+                    <p>Video and sound analysis solution built during the startup hackathon.</p>`
+                },
+                hiti: {
+                    title: 'Health AI Bias Datathon Scholarship',
+                    subtitle: 'HITI Lab • August 2024',
+                    body: `<p>Selected for competitive scholarship focused on identifying and mitigating bias in healthcare AI systems.</p>`
+                },
+                icorps: {
+                    title: '2× I-Corps Workshop Scholarships',
+                    subtitle: '2024',
+                    body: `<p>Received two I-Corps Workshop Scholarships for innovative project ideas.</p>
+                    <h4>About I-Corps</h4>
+                    <p>NSF Innovation Corps program for translating research to commercial applications.</p>`
+                },
+                business: {
+                    title: '3rd Place - Business Plan Competition',
+                    subtitle: 'Oklahoma State University • February 2022',
+                    body: `<p>Won 3rd place in the OSU Business Plan Competition.</p>`
+                },
+                robotics: {
+                    title: '1st Place - Open Robotics League',
+                    subtitle: 'Soccer Competition • April 2016',
+                    body: `<p>Won 1st place in the Open International Robotics League for soccer robots.</p>`
+                },
+                finalist: {
+                    title: '4× Business Plan Competition Finalist',
+                    subtitle: 'Oklahoma State University • 2022-2025',
+                    body: `<p>Four-time finalist in the OSU Business Plan Competition across multiple years.</p>`
+                }
+            }
+        };
+
+        // Modal Functions
+        function openModal(title, subtitle, body) {
+            document.getElementById('modal-title').innerHTML = title;
+            document.getElementById('modal-subtitle').innerHTML = subtitle;
+            document.getElementById('modal-body').innerHTML = body;
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function showSkillModal(key) {
+            const data = modalData.skills[key];
+            openModal(data.title, data.subtitle, data.body);
+        }
+
+        function showExpModal(key) {
+            const data = modalData.experience[key];
+            openModal(data.title, data.subtitle, data.body);
+        }
+
+        function showResearchModal(key) {
+            const data = modalData.research[key];
+            openModal(data.title, data.subtitle, data.body);
+        }
+
+        function showProjectModal(key) {
+            const data = modalData.projects[key];
+            openModal(data.title, data.subtitle, data.body);
+        }
+
+        function showAwardModal(key) {
+            const data = modalData.awards[key];
+            openModal(data.title, data.subtitle, data.body);
+        }
+
+        // Close modal on overlay click
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
 
@@ -1520,24 +2088,13 @@
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
-                
+                const rotateX = (y - centerY) / 25;
+                const rotateY = (centerX - x) / 25;
                 card.style.transform = `translateZ(30px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
-
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateZ(0) rotateX(0) rotateY(0)';
             });
-        });
-
-        // Parallax for grid floor
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const floor = document.querySelector('.grid-floor');
-            if (floor) {
-                floor.style.transform = `rotateX(75deg) translateZ(-100px) translateY(${scrolled * 0.1}px)`;
-            }
         });
     </script>
 </body>

@@ -1296,8 +1296,8 @@
                 <div class="hero-text">
                     <div class="subtitle">◈ Ph.D. Computer Science</div>
                     <h1>Araas Boloorchi</h1>
-                    <div class="role">Machine Learning & Deep Learning Scientist | AI Cognitive Scientist</div>
-                    <div class="role-secondary">Deep Models Architect & Robotics</div>
+                    <div class="role">Teaching Machines to See, Think & Navigate</div>
+                    <div class="role-secondary">3D Vision × Deep Learning × Autonomous Robotics</div>
                     <p class="description">
                         Designing intelligent systems at the intersection of perception and cognition. Specialized in 3D scene understanding, Visual-Inertial Odometry, SLAM, and building AI architectures that bridge spatial reasoning with cognitive frameworks.
                     </p>
@@ -1657,7 +1657,7 @@
                 <p>Let's architect intelligent systems together</p>
             </div>
             <div class="contact-links">
-                <a href="mailto:AraasBoloorchi@gmail.com" class="contact-link">📧 AraasBoloorchi@gmail.com</a>
+                <a href="/cdn-cgi/l/email-protection#df9eadbebeac9db0b3b0b0adbcb7b69fb8b2beb6b3f1bcb0b2" class="contact-link">📧 <span class="__cf_email__" data-cfemail="fdbc8f9c9c8ebf929192928f9e9594bd9a909c9491d39e9290">[email&#160;protected]</span></a>
                 <a href="https://www.linkedin.com/in/araas-boloorchi" target="_blank" class="contact-link">💼 linkedin.com/in/araas-boloorchi</a>
                 <a href="https://github.com/Araas-Boloorchi" target="_blank" class="contact-link">💻 github.com/Araas-Boloorchi</a>
                 <a href="https://scholar.google.com/citations?user=0oXdUkAAAAAJ&hl=en" target="_blank" class="contact-link">📚 Google Scholar Profile</a>
@@ -1667,10 +1667,10 @@
     </main>
 
     <footer>
-        <p>© 2025 Araas Boloorchi — ML & Deep Learning Scientist | Deep Models Architect & Robotics</p>
+        <p>© 2025 Araas Boloorchi — Where Machines Learn to See, Think & Navigate</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Modal Data
         const modalData = {
             skills: {
@@ -2585,3 +2585,16 @@
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                card.style.transform = `translateZ(30px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Moon Station Project | Araas Boloorchi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #01889f;
+            --secondary: #800000;
+            --accent: #00d4ff;
+            --wire: rgba(1, 136, 159, 0.15);
+            --wire-bright: rgba(1, 136, 159, 0.4);
+            --dark: #0a0a0f;
+            --darker: #020204;
+            --light: #e0e0e0;
+            --glow: 0 0 20px rgba(1, 136, 159, 0.5);
+            --glow-strong: 0 0 40px rgba(1, 136, 159, 0.8);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid var(--wire-bright);
+            padding: 3rem;
+            box-shadow: var(--glow);
+            text-align: left;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary);
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: var(--primary);
+            color: var(--darker);
+            box-shadow: var(--glow);
+        }
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            font-size: 2.5rem;
+            text-shadow: var(--glow);
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: var(--accent);
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+        .media-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .media-container img, .media-container video {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--primary);
+            box-shadow: var(--glow);
+        }
+        .content {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+        .content h4 {
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .link-container {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .external-btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .external-btn:hover {
+            background: var(--primary);
+            color: var(--darker);
+            box-shadow: var(--glow-strong);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">[Back to Portfolio]</a>
+        <h1>NASA Moon Station Project</h1>
+        <div class="subtitle">Space Exploration • CAD & AR Prototype • Dec 2024</div>
+        
+        <div class="media-container">
+                <video controls autoplay muted loop playsinline><source src="images/Nasa_project.mp4" type="video/mp4"></video>
+            </div>
+
+        <div class="content">
+            <p>A comprehensive design project for lunar exploration infrastructure, featuring detailed CAD models and an augmented reality prototype for visualizing the proposed moon station and space exploration vehicle.</p>
+                    <h4>Project Deliverables</h4>
+                    <ul>
+                        <li>Complete SolidWorks CAD model of modular lunar habitat</li>
+                        <li>Space Exploration Vehicle (SEV) design with life support systems</li>
+                        <li>Docking mechanism and airlock designs</li>
+                        <li>Solar panel array configurations for lunar conditions</li>
+                        <li>Thermal management system specifications</li>
+                    </ul>
+                    <h4>AR Visualization</h4>
+                    <ul>
+                        <li>Unity-based AR application for interactive exploration</li>
+                        <li>1:1 scale visualization of lunar modules</li>
+                        <li>Interior walkthrough capability</li>
+                        <li>Assembly sequence animation</li>
+                    </ul>
+                    <h4>Design Considerations</h4>
+                    <ul>
+                        <li>Radiation shielding using regolith</li>
+                        <li>Micrometeorite protection</li>
+                        <li>Modular expansion capability</li>
+                    </ul>
+                    <p><a href="https://www.youtube.com/watch?app=desktop&v=NDBrM3J_doM" target="_blank">🎬 Watch Full Project Video →</a></p>
+                    <div class="modal-tags">
+                        <span class="modal-tag">SolidWorks</span>
+                        <span class="modal-tag">CAD</span>
+                        <span class="modal-tag">AR</span>
+                        <span class="modal-tag">Unity</span>
+                        <span class="modal-tag">Space</span>
+                        <span class="modal-tag">NASA</span>
+                    </div>
+        </div>
+
+        <div class="link-container">
+                <a href="https://www.youtube.com/watch?v=NDBrM3J_doM" target="_blank" class="external-btn">🎬 Watch Full Project Video</a>
+            </div>
+    </div>
+</body>
+</html>

@@ -298,9 +298,11 @@ h3 a:hover {
 /**************************************************/
 /* Subtle footer at the bottom of the page. */
 
-#footer {
-  color: #a0a8b0;
-  position: absolute;
-  bottom: 0;
-  line-height: 2.5em;
+/* Search Additions overlaying old styles if needed */
+
+/* Add an extra glow when hovering over the new search bar */
+#global-search:focus {
+  border-color: #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+  width: 300px;
 }

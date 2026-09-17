@@ -779,6 +779,10 @@
             animation-delay: 0.6s;
         }
 
+        .timeline-item:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
         @keyframes timelineEmerge {
             0% {
                 opacity: 0;
@@ -1116,6 +1120,145 @@
             font-family: 'Space Mono', monospace;
             color: var(--accent);
             font-size: 0.7rem;
+        }
+
+        /* Recommendations Section */
+        #recommendations {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .recommendation-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .recommendation-card {
+            position: relative;
+            background: rgba(10, 10, 15, 0.9);
+            border: 1px solid var(--wire-bright);
+            padding: 2.5rem 2.5rem 2rem;
+            transition: all 0.4s ease;
+            opacity: 0;
+            animation: cardEmerge 0.8s ease-out forwards;
+            animation-delay: 0.1s;
+        }
+
+        .recommendation-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--glow-strong);
+            transform: translateZ(20px);
+        }
+
+        .recommendation-card .quote-mark {
+            position: absolute;
+            top: 0.5rem;
+            left: 1.25rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--primary);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .recommendation-card blockquote {
+            position: relative;
+            font-size: 1.05rem;
+            color: #b8b8b8;
+            line-height: 1.8;
+            border-left: 2px solid var(--primary);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .recommendation-card blockquote em {
+            color: var(--light);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .recommender {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            border-top: 1px solid var(--wire);
+            padding-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .recommender .avatar {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: var(--primary);
+            background: var(--darker);
+            box-shadow: var(--glow);
+        }
+
+        .recommender-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .recommender-info .name {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .recommender-info .title {
+            color: var(--light);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .recommender-info .meta {
+            font-family: 'Space Mono', monospace;
+            color: var(--secondary);
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
+        }
+
+        .ati-badge {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            border: 1px solid var(--wire-bright);
+            padding: 0.5rem 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .ati-badge:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+        }
+
+        .ati-badge svg {
+            display: block;
+            width: 44px;
+            height: 44px;
+        }
+
+        .ati-badge span {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .ati-badge:hover span {
+            color: var(--accent);
         }
 
         /* Contact Section */
@@ -1529,6 +1672,23 @@
                 content: '▸';
             }
 
+            #recommendations .section-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .recommendation-card {
+                padding: 2rem 1.25rem 1.5rem;
+            }
+
+            .recommendation-card blockquote {
+                font-size: 0.95rem;
+                padding-left: 1rem;
+            }
+
+            .recommender {
+                gap: 1rem;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -1605,6 +1765,7 @@
                 <li><a href="#research">Research</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#awards">Awards</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -1745,6 +1906,19 @@
                 <p>Building intelligent systems from research to production</p>
             </div>
             <div class="timeline searchable-container">
+                <div class="timeline-item searchable-item"
+                    data-search="automated tire ati smartbay machine vision computer vision robotics physical ai machine learning">
+                    <div class="timeline-content" onclick="showExpModal('ati')">
+                        <h3>Machine Vision Engineer</h3>
+                        <div class="company">Automated Tire, Inc. (ATI)</div>
+                        <div class="date">2026 - Present</div>
+                        <ul>
+                            <li>Machine vision hardware for robotic service</li>
+                            <li>Vision models with mm-scale sensitivity</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
                 <div class="timeline-item searchable-item"
                     data-search="flyx machine learning engineer isaac ros visual slam jetson orin mavlink 3d reconstruction">
                     <div class="timeline-content" onclick="showExpModal('flyx')">
@@ -2061,6 +2235,47 @@
         </section>
 
         <!-- Contact Section -->
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="searchable-section">
+            <div class="section-header">
+                <h2>Recommendations</h2>
+                <p>What the engineers I build with have to say</p>
+            </div>
+            <div class="recommendation-grid searchable-container">
+                <div class="recommendation-card searchable-item"
+                    data-search="recommendation michael reilly automated tire ati mechatronics machine vision ml prototype tire change">
+                    <div class="quote-mark">&ldquo;</div>
+                    <blockquote>
+                        Araas helped identify new MV hardware for our project, and he went on to develop a
+                        <em>novel vision model for monitoring subtle movements during a tire change process</em>.
+                        Tracking the geometry of a compressed rubber tire is very difficult to solve with deterministic
+                        measurements, and in a short period he demonstrated a
+                        <em>working ML prototype with mm-scale sensitivity</em>.
+                        Araas was easy to work with and is clearly an expert in his field.
+                    </blockquote>
+                    <div class="recommender">
+                        <div class="avatar">MR</div>
+                        <div class="recommender-info">
+                            <div class="name">Michael Reilly</div>
+                            <div class="title">Senior Mechatronics Engineer, Automated Tire, Inc.</div>
+                            <div class="meta">September 2026 &middot; Worked with Araas on the same team</div>
+                        </div>
+                        <a href="https://ati-inc.co/" target="_blank" rel="noopener noreferrer" class="ati-badge"
+                            aria-label="Automated Tire, Inc.">
+                            <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+                                <circle cx="32" cy="32" r="29" fill="none" stroke="#01889f" stroke-width="2" />
+                                <circle cx="32" cy="32" r="22" fill="none" stroke="#01889f" stroke-width="1"
+                                    stroke-dasharray="3 4" opacity="0.7" />
+                                <text x="32" y="37" text-anchor="middle" fill="#00d4ff"
+                                    font-family="Orbitron, sans-serif" font-size="18" font-weight="700">ATI</text>
+                            </svg>
+                            <span>AUTOMATED<br>TIRE, INC.</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
             <div class="section-header">
                 <h2>Contact</h2>

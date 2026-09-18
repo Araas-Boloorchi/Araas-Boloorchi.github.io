@@ -17,7 +17,7 @@ window.CONTENT = {
     "subtitle": "Generative AI/VLM Category • Oklahoma State University • April 2025",
     "media": {
       "kind": "img",
-      "src": "images/profile.png"
+      "src": "profile.png"
     },
     "body": "<p>Achieved 2nd place out of 50+ teams for developing an innovative AI application using cutting-edge Vision-Language Models.</p>\n<h4>Project Overview</h4>\n<p>Built a VLM-based generative AI application that demonstrates advanced multi-modal reasoning capabilities, combining visual understanding with natural language generation.</p>\n<h4>Technical Highlights</h4>\n<ul>\n<li>Implemented CLIP-based image understanding pipeline</li>\n<li>Integrated GPT-4V for visual question answering</li>\n<li>Built real-time inference system with sub-second latency</li>\n<li>Developed intuitive user interface for demo</li>\n</ul>\n<h4>Competition Details</h4>\n<ul>\n<li>24-hour hackathon format</li>\n<li>Judged on innovation, technical execution, and presentation</li>\n<li>Competed against graduate and undergraduate teams</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">VLM</span>\n<span class=\"modal-tag\">Generative AI</span>\n<span class=\"modal-tag\">Hackathon</span>\n<span class=\"modal-tag\">ACM</span>",
     "page": "acm.html"
@@ -57,7 +57,7 @@ window.CONTENT = {
     "subtitle": "Oklahoma State University • Riata Center • February 2022",
     "media": {
       "kind": "img",
-      "src": "images/profile.png"
+      "src": "profile.png"
     },
     "body": "<p>Won 3rd place in the prestigious OSU Business Plan Competition, competing against graduate and undergraduate teams from across the university.</p>\n<h4>Business Concept</h4>\n<p>Presented a comprehensive business plan for an AI-powered robotics solution targeting industrial automation markets.</p>\n<h4>Competition Elements</h4>\n<ul>\n<li>Executive summary and business model canvas</li>\n<li>Market analysis and competitive landscape</li>\n<li>Financial projections and funding requirements</li>\n<li>Live pitch to panel of investors and entrepreneurs</li>\n</ul>\n<h4>Judging Criteria</h4>\n<ul>\n<li>Innovation and market potential</li>\n<li>Technical feasibility</li>\n<li>Team capability and execution plan</li>\n<li>Presentation quality</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Business Plan</span>\n<span class=\"modal-tag\">Entrepreneurship</span>\n<span class=\"modal-tag\">Pitch Competition</span>\n<span class=\"modal-tag\">OSU</span>",
     "page": "business.html"
@@ -67,7 +67,7 @@ window.CONTENT = {
     "subtitle": "Catch Up AI • Jan 2024 - Present (Advisor since May 2026)",
     "media": {
       "kind": "img",
-      "src": "images/profile.png"
+      "src": "profile.png"
     },
     "body": "<p>Leading ML development for enterprise communication analytics.</p>\n<h4>Key Contributions</h4>\n<ul>\n<li>Led 4-engineer ML team from concept to production MVP in 12 weeks</li>\n<li>Architected sentiment analysis pipeline processing Jira, Slack, and Zoom data</li>\n<li>Improved precision from 0.71 → 0.86 (+21%) through advanced prompt engineering</li>\n<li>Implemented PyTorch GNN to model organizational social graphs</li>\n<li>Boosted recommendation accuracy by 22%</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">PyTorch</span>\n<span class=\"modal-tag\">GNN</span>\n<span class=\"modal-tag\">NLP</span>\n<span class=\"modal-tag\">Sentiment Analysis</span>\n<span class=\"modal-tag\">Team Lead</span>\n</div>",
     "page": "catchup.html",
@@ -78,7 +78,7 @@ window.CONTENT = {
     "subtitle": "Brain-Inspired AI Architecture",
     "media": {
       "kind": "img",
-      "src": "images/profile.png"
+      "src": "profile.png"
     },
     "body": "<p>Designing AI systems that mirror human cognitive processes, bridging the gap between perception and\nreasoning.</p>\n<h4>Core Capabilities</h4>\n<ul>\n<li>Explainable AI (XAI) frameworks for transparent decision-making</li>\n<li>Social-cognitive models for responsible AI deployment</li>\n<li>Brain-inspired neural architectures</li>\n<li>Interpretable deep learning systems</li>\n</ul>\n<h4>Key Publication</h4>\n<p>\"Towards Responsible AI\" - Springer Nature Journal, 2025</p>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Explainable AI</span>\n<span class=\"modal-tag\">Cognitive Science</span>\n<span class=\"modal-tag\">Neural Networks</span>\n<span class=\"modal-tag\">Interpretability</span>\n</div>",
     "page": "cognitive.html",

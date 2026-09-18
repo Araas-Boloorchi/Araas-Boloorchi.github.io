@@ -35,7 +35,7 @@ files.forEach(file => {
         return isAllowed(match) ? match : '';
     });
 
-    if (file === 'sightvoice.html') {
+    if (file === 'lumiwalk.html') {
         if (!content.includes('lumiwalk.ai')) {
             content = content.replace(/<\/div>\s*<\/body>/,
                 `    <div class="link-container">\n        <a href="https://lumiwalk.ai" target="_blank" class="external-btn">LumiWalk.ai ↗</a>\n    </div>\n    </div>\n</body>`);

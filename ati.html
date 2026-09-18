@@ -22,34 +22,31 @@
             <p class="nda-note">
                 <strong>A quick understanding, not a deep dive.</strong> Automated Tire's platform is proprietary,
                 so the specifics stay inside the company. What follows is a high-level summary of the kind of
-                perception work I lead there, at the level already published on my resume. Happy to talk through
-                my general approach in conversation.
+                perception work I lead there. Happy to talk through my general approach in conversation.
             </p>
 
-            <p>I lead perception engineering for a robotic service platform that works on a vehicle without
-                removing the wheel. That means owning the chain end to end: which sensors we use, the algorithms
-                that read them, and getting both running reliably on the robot.</p>
+            <p>I lead perception engineering for Automated Tire's SmartBay, a robotic platform that services
+                tires without removing the wheel from the vehicle. That means owning the chain end to end: which
+                sensors we use, the algorithms that read them, and getting both running reliably on the robot.
+                You can see the platform in
+                <a href="https://www.youtube.com/watch?v=bqePUb3PUwg" target="_blank" rel="noopener noreferrer">The
+                    Robot Report's introduction video</a>.</p>
 
             <h4>What the work involves</h4>
             <ul>
-                <li>Sensor selection backed by measurement rather than spec sheets - I built a benchmarking
-                    platform that characterised seven depth cameras against the application's real requirements</li>
-                <li>That benchmarking drove a fleet-wide camera replacement, with roughly 50% better accuracy,
-                    a 20x higher frame rate, and far fewer connection failures</li>
-                <li>3D reconstruction of a compressed tire's geometry to under 2 mm error - deceptively hard,
-                    because rubber under load does not hold a shape that deterministic measurement can pin down</li>
-                <li>An on-robot quality assessment that I took from a 30-minute runtime to real time</li>
-                <li>Object detection adapted to new camera perspectives, plus a region-of-interest step that
-                    improved both localisation and segmentation</li>
-                <li>A ROS 2 feedback pipeline with on-robot visualisation, and control logic that adjusts the
-                    robot's routine based on what perception reports back</li>
+                <li>Evaluating and selecting depth and machine vision hardware, based on measurement against the
+                    application's needs rather than spec sheets</li>
+                <li>Vision models that track a compressed tire's geometry during the tire change &mdash; hard,
+                    because rubber under load doesn't hold a shape that deterministic measurement can pin down</li>
+                <li>Optimising perception to run in real time on the robot</li>
+                <li>Connecting what perception sees back into how the robot works</li>
             </ul>
 
-            <h4>Stack</h4>
+            <h4>Tools</h4>
             <ul>
                 <li>Depth cameras, stereo vision, camera calibration</li>
-                <li>YOLOv8, PyTorch, OpenCV</li>
-                <li>ROS 2, Go, Python, C++</li>
+                <li>PyTorch, OpenCV, object detection</li>
+                <li>ROS 2, Python, C++</li>
             </ul>
         </div>
     </div>

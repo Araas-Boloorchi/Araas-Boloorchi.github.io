@@ -5,6 +5,7 @@
      1. Tabs        — one panel at a time, driven by the URL hash
      2. Modal       — click a card (or its video) for the full write-up
      3. Search      — filters cards inside the active tab
+     4. Card videos — play while on screen, pause when not
    ========================================================================== */
 (function () {
     'use strict';
@@ -73,6 +74,12 @@
 
     function mediaMarkup(media, title) {
         if (!media) { return ''; }
+        if (media.kind === 'youtube') {
+            return '<div class="video-embed"><iframe src="' + media.src + '?autoplay=1&mute=1" ' +
+                'title="' + title.replace(/"/g, '&quot;') + '" ' +
+                'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ' +
+                'allowfullscreen></iframe></div>';
+        }
         if (media.kind === 'video') {
             return '<video controls autoplay muted loop playsinline>' +
                 '<source src="' + media.src + '" type="video/mp4"></video>';
@@ -80,7 +87,7 @@
         // a placeholder image that has not been added yet should collapse, not
         // show a broken-image icon
         return '<img src="' + media.src + '" alt="' + title.replace(/"/g, '&quot;') +
-            '" onerror="this.parentNode.hidden = true">';
+            '" onerror="if (this.parentNode) this.parentNode.hidden = true">';
     }
 
     function openModal(key) {
@@ -97,6 +104,8 @@
 
         if (item.link) {
             mLink.href = item.link;
+            var host = new URL(item.link).hostname.replace(/^www\./, '');
+            mLink.textContent = (/(^|\.)youtube\.com$|^youtu\.be$/.test(host) ? 'Watch on YouTube' : 'Visit ' + host) + ' ↗';
             mLink.hidden = false;
         } else {
             mLink.hidden = true;
@@ -116,8 +125,28 @@
         if (lastFocus) { lastFocus.focus(); }
     }
 
+    // An external link inside a card (which is itself a link) opens in a new tab
+    // instead of the card's modal.
+    function openCardLink(el) {
+        window.open(el.dataset.href, '_blank', 'noopener');
+    }
+    document.addEventListener('keydown', function (e) {
+        var el = e.target.closest && e.target.closest('.card-ext-link');
+        if (el && (e.key === 'Enter' || e.key === ' ')) {
+            e.preventDefault();
+            e.stopPropagation();
+            openCardLink(el);
+        }
+    }, true);
+
     // Any element carrying data-key opens the modal instead of navigating.
     document.addEventListener('click', function (e) {
+        var ext = e.target.closest('.card-ext-link');
+        if (ext) {
+            e.preventDefault();
+            openCardLink(ext);
+            return;
+        }
         var trigger = e.target.closest('[data-key]');
         if (!trigger) { return; }
         var key = trigger.dataset.key;
@@ -127,7 +156,17 @@
     });
 
     modal.addEventListener('click', function (e) {
-        if (e.target === modal || e.target.closest('.modal-close')) { closeModal(); }
+        if (e.target === modal || e.target.closest('.modal-close')) { closeModal(); return; }
+        // a link in the write-up to another tab (index.html#name) switches tab in place
+        var a = e.target.closest('a[href*="#"]');
+        if (a && /(^|index\.html)#/.test(a.getAttribute('href'))) {
+            var name = a.getAttribute('href').split('#')[1];
+            if (tabs.some(function (t) { return t.dataset.tab === name; })) {
+                e.preventDefault();
+                closeModal();
+                showTab(name, true);
+            }
+        }
     });
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !modal.hidden) { closeModal(); }
@@ -171,25 +210,95 @@
     }
     window.performSearch = runSearch;   // kept for any inline caller
 
-    /* 4. Thumbnail video previews
-       The cards hold nine looping clips. Autoplaying them all cost hundreds of
-       requests, so they load metadata only and play while hovered or focused.
+    /* 4. Card videos
+       Every clip plays, muted and looping, as soon as its card is on screen,
+       and pauses when it scrolls away or its tab is closed. Letting all of them
+       autoplay regardless cost hundreds of requests for clips nobody could see.
        ---------------------------------------------------------------------- */
-    document.querySelectorAll('.project-media video').forEach(function (v) {
-        var card = v.closest('.project-card');
-        if (!card) { return; }
+    function playClip(v) {
+        var p = v.play();
+        if (p && p.catch) { p.catch(function () { /* autoplay blocked */ }); }
+    }
 
-        function play() {
-            var p = v.play();
-            if (p && p.catch) { p.catch(function () { /* autoplay blocked */ }); }
+    // YouTube cards show a thumbnail until first seen, then swap in a muted,
+    // looping, control-free player; clicks still reach the card underneath.
+    function startEmbed(media) {
+        if (media.querySelector('iframe')) { return; }
+        var id = media.dataset.youtube;
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id +
+            '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=0&playsinline=1&modestbranding=1&rel=0';
+        f.title = '';
+        f.tabIndex = -1;
+        f.setAttribute('aria-hidden', 'true');
+        f.allow = 'autoplay; encrypted-media';
+        f.className = 'card-embed';
+        media.appendChild(f);
+    }
+
+    // A card with data-clip plays one excerpt of a YouTube video (data-start to
+    // data-end seconds) over its picture, then fades away to reveal the picture.
+    function startClip(media) {
+        if (media.dataset.clipped) { return; }
+        media.dataset.clipped = '1';
+        var id = media.dataset.clip;
+        var start = +media.dataset.start || 0;
+        var end = +media.dataset.end || start + 10;
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?start=' + start + '&end=' + end +
+            '&autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&enablejsapi=1' +
+            '&origin=' + encodeURIComponent(location.origin);
+        f.title = '';
+        f.tabIndex = -1;
+        f.setAttribute('aria-hidden', 'true');
+        f.allow = 'autoplay; encrypted-media';
+        f.className = 'card-clip';
+        media.appendChild(f);
+
+        var finished = false;
+        function finish() {
+            if (finished) { return; }
+            finished = true;
+            window.removeEventListener('message', onMsg);
+            f.classList.add('done');
+            setTimeout(function () {
+                f.remove();
+                delete media.dataset.clipped;   // plays again next time the card scrolls into view
+            }, 700);
         }
-        function stop() {
-            v.pause();
-            v.currentTime = 0;
+        // The player reports state changes once asked to; 0 means "ended".
+        function onMsg(e) {
+            if (e.source !== f.contentWindow) { return; }
+            var d;
+            try { d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (err) { return; }
+            if (!d) { return; }
+            if (d.event === 'onStateChange' && d.info === 0) { finish(); }
+            if (d.event === 'infoDelivery' && d.info && d.info.playerState === 0) { finish(); }
         }
-        card.addEventListener('mouseenter', play);
-        card.addEventListener('focus', play);
-        card.addEventListener('mouseleave', stop);
-        card.addEventListener('blur', stop);
+        window.addEventListener('message', onMsg);
+        f.addEventListener('load', function () {
+            f.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: id }), '*');
+            // backup in case the player never reports back: clip length plus load slack
+            setTimeout(finish, (end - start + 8) * 1000);
+        });
+    }
+
+    var seen = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+            var el = en.target;
+            if (el.tagName === 'VIDEO') {
+                if (en.isIntersecting) { playClip(el); } else { el.pause(); }
+            } else if (en.isIntersecting) {
+                if (el.dataset.clip) { startClip(el); } else { startEmbed(el); }
+            }
+        });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.project-media video').forEach(function (v) {
+        v.muted = true;            // browsers only autoplay muted media
+        seen.observe(v);
+    });
+    document.querySelectorAll('.project-media[data-youtube], .project-media[data-clip]').forEach(function (m) {
+        seen.observe(m);
     });
 })();

@@ -108,8 +108,7 @@
                         environments to depth-based perception for robotic tire automation. Deep expertise in 3D
                         reconstruction, depth sensing, SLAM, visual-inertial odometry, object detection, and
                         sim-to-real transfer with NVIDIA Isaac. Currently leading perception work at Automated
-                        Tire, Inc., where camera benchmarking drove a fleet-wide depth-camera upgrade and quality
-                        checks went from 30 minutes to real time.</p>
+                        Tire, Inc., on a robotic platform that services tires without removing the wheel.</p>
                 </section>
 
                 <section class="resume-block searchable-item"
@@ -145,7 +144,7 @@
                     <h4>Professional Experience</h4>
 
                     <div class="resume-job searchable-item"
-                        data-search="automated tire principal perception engineer woburn depth sensing benchmarking 7 depth cameras 3d reconstruction 2mm yolov8 ros2 go">
+                        data-search="automated tire principal perception engineer woburn depth sensing machine vision 3d vision tire robot smartbay">
                         <div class="resume-job-head">
                             <h5>Principal Perception Engineer</h5>
                             <span class="resume-when">May 2026 &ndash; Present</span>
@@ -158,13 +157,10 @@
                         <ul>
                             <li>Lead perception engineering: sensor selection, algorithm development, and on-robot
                                 deployment</li>
-                            <li>Built a benchmarking platform that characterised seven depth cameras against the
-                                application's real requirements, driving a fleet-wide camera upgrade</li>
-                            <li>Engineered a 3D reconstruction pipeline for compressed tire geometry to under 2 mm
-                                error</li>
-                            <li>Took an on-robot quality assessment from a 30-minute runtime to real time</li>
-                            <li>ROS 2 feedback pipeline with on-robot visualisation, and control logic that adapts
-                                the robot's routine to what perception reports</li>
+                            <li>Evaluate and select depth and machine vision hardware for the platform</li>
+                            <li>Develop vision models that track a compressed tire's geometry during the tire
+                                change, with millimetre-scale sensitivity</li>
+                            <li>Optimise perception to run in real time on the robot</li>
                         </ul>
                         <a class="resume-more" href="ati.html" data-key="ati">[Read more]</a>
                     </div>
@@ -330,10 +326,11 @@
                             <span class="resume-venue">ATRC, Dec 2019</span>
                             <p>Turned a conceptual VIO methodology into a real-time navigation device with custom
                                 sensor fusion software for GPS-denied flight.</p></li>
-                        <li><a href="sightvoice.html" data-key="sightvoice">Visually Impaired Assistant Headband</a>
-                            <span class="resume-venue">Entrepreneurship project, 2019&ndash;2025</span>
+                        <li><a href="lumiwalk.html" data-key="lumiwalk">LumiWalk &mdash; Visually Impaired Assistant Headband</a>
+                            <span class="resume-venue">Entrepreneurship project, 2019&ndash;2025 &middot;
+                                <a href="https://lumiwalk.ai" target="_blank" rel="noopener noreferrer">lumiwalk.ai</a></span>
                             <p>Working prototype pairing real-time obstacle detection with voice feedback for blind
-                                users; placed 2nd twice and 3rd once in business plan competitions.</p></li>
+                                users; 4&times; business plan competition finalist.</p></li>
                         <li><a href="health.html" data-key="health">AI + Global Health Hackathon</a>
                             <span class="resume-venue">San Francisco, Dec 2024</span>
                             <p>Real-time obstacle recognition prototype using a webcam and Apple Vision Pro, built
@@ -446,15 +443,15 @@
                 <p>Building intelligent systems from research to production</p>
             </div>
             <div class="timeline searchable-container">
-                <div class="timeline-item searchable-item" data-search="automated tire ati smartbay principal perception engineer depth sensing benchmarking 3d reconstruction yolov8 ros2 go woburn">
+                <div class="timeline-item searchable-item" data-search="automated tire ati smartbay principal perception engineer depth sensing machine vision 3d vision tire robot woburn">
                     <a class="timeline-content" href="ati.html" data-key="ati">
                         <h3>Principal Perception Engineer</h3>
                         <div class="company">Automated Tire, Inc., Woburn, MA</div>
                         <div class="date">May 2026 - Present</div>
                         <ul>
-                            <li>Depth-sensing prototype drove a fleet-wide camera upgrade</li>
-                            <li>On-robot quality checks: 30 minutes to real time</li>
-                            <li>3D tire reconstruction under 2 mm error</li>
+                            <li>Leads perception for a robotic tire-service platform</li>
+                            <li>Machine vision hardware selection</li>
+                            <li>Vision models with mm-scale sensitivity</li>
                         </ul>
                         <span class="click-hint">[Click for details]</span>
                     </a>
@@ -602,6 +599,17 @@
                 <p>From research prototypes to deployed systems</p>
             </div>
             <div class="projects-grid searchable-container">
+                <a href="tire-vision.html" class="project-card searchable-item" data-key="tire-vision" data-search="tire deformation tracking automated tire ati machine vision hardware novel vision model ml prototype mm-scale compressed rubber recommendation michael reilly smartbay robot report video">
+                    <div class="project-media" data-clip="bqePUb3PUwg" data-start="22" data-end="34">
+                        <img class="rec-shot" src="images/recomendation.jpeg"
+                            alt="LinkedIn recommendation from Michael Reilly, Senior Mechatronics Engineer at Automated Tire">
+                        <span class="play-badge" aria-hidden="true">&#9654;</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Tire Deformation Tracking</h3>
+                        <p>Novel vision model with mm-scale sensitivity on a compressed rubber tire &mdash; Automated Tire, Inc.</p>
+                    </div>
+                </a>
                 <a href="vio.html" class="project-card searchable-item" data-key="vio" data-search="visual inertial odometry vio real-time 3d navigation gps denied slam">
                     <div class="project-media">
                         <video playsinline muted loop preload="metadata">
@@ -662,14 +670,26 @@
                         <p>Precision industrial control</p>
                     </div>
                 </a>
-                <a href="sightvoice.html" class="project-card searchable-item" data-key="sightvoice" data-search="sightvoice lumiwalk visual assistant visually impaired yolov8 vlm health">
+                <a href="lumiwalk.html" class="project-card searchable-item" data-key="lumiwalk" data-search="lumiwalk lumiwalk.ai visual assistant visually impaired yolov8 vlm health business plan finalist">
                     <div class="project-media">
-                        <img src="images/WhatsApp Image 2025-01-21 at 22.56.56_9bb54812.jpg" alt="SightVoice (LumiWalk)">
+                        <img src="images/WhatsApp Image 2025-01-21 at 22.56.56_9bb54812.jpg" alt="LumiWalk">
                         <div class="project-overlay"></div>
                     </div>
                     <div class="project-info">
-                        <h3>SightVoice (LumiWalk)</h3>
+                        <h3>LumiWalk</h3>
                         <p>AI visual assistant for visually impaired</p>
+                        <span class="card-ext-link" role="link" tabindex="0" data-href="https://lumiwalk.ai">lumiwalk.ai &#8599;</span>
+                    </div>
+                </a>
+                <a href="health.html" class="project-card searchable-item" data-key="health" data-search="ai global health hackathon san francisco apple vision pro obstacle recognition visually impaired 24 hour teamwork 1st place video">
+                    <div class="project-media" data-youtube="lJ5rbw_M91o">
+                        <img src="https://i.ytimg.com/vi/lJ5rbw_M91o/oar2.jpg" alt="AI+ Global Health Hackathon demo" loading="lazy">
+                        <div class="project-overlay"></div>
+                        <span class="play-badge" aria-hidden="true">&#9654;</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>AI+ Global Health Hackathon</h3>
+                        <p>Apple Vision Pro obstacle recognition, built in 24 hours &mdash; 1st Place Teamwork</p>
                     </div>
                 </a>
                 <a href="nasa.html" class="project-card searchable-item" data-key="nasa" data-search="nasa moon station cad solidworks ar unity space exploration">
@@ -720,7 +740,7 @@
                     <h3>2nd Place ACM Hackathon</h3>
                     <div class="year">Gen AI/VLM • Apr 2025</div>
                 </a>
-                <a href="health.html" class="award-card searchable-item" data-key="health" data-search="health hackathon ai+ visual assistant 1st teamwork sightvoice">
+                <a href="health.html" class="award-card searchable-item" data-key="health" data-search="health hackathon ai+ visual assistant 1st teamwork lumiwalk">
                     <h3>1st Teamwork AI+ Health</h3>
                     <div class="year">Visual Assistant • Dec 2024</div>
                 </a>

@@ -54,6 +54,12 @@ html {
     scroll-behavior: smooth;
 }
 
+/* app.js toggles visibility with the hidden attribute; component display rules
+   (e.g. .btn's inline-block) would otherwise override it */
+[hidden] {
+    display: none !important;
+}
+
 body {
     font-family: 'Rajdhani', sans-serif;
     background: var(--bg);
@@ -1779,6 +1785,120 @@ footer p {
 .resume-pubs p {
     margin-top: 0.35rem;
     font-size: 0.9rem;
+}
+
+/* pull quote on detail pages and in the modal */
+.detail-quote {
+    margin: 0.5rem 0 1rem;
+    padding: 0.75rem 1.1rem;
+    border-left: 3px solid var(--primary);
+    background: var(--surface-alt);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.detail-quote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-subtle);
+}
+
+/* external link inside a card that is itself a link (handled in app.js) */
+.card-ext-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--primary-deep);
+    border-bottom: 1px solid var(--wire-bright);
+    cursor: pointer;
+}
+
+.card-ext-link:hover,
+.card-ext-link:focus-visible {
+    border-bottom-color: var(--primary);
+    outline: none;
+}
+
+/* muted looping YouTube player filling a 16:9 card; portrait Shorts are
+   centre-cropped. Clicks pass through to the card. */
+.card-embed {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    transform: translateY(-50%);
+    border: 0;
+    pointer-events: none;
+}
+
+/* a landscape clip that plays once over the card, then fades to reveal what
+   sits underneath (app.js removes it when the clip ends) */
+.card-clip {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}
+
+.card-clip.done {
+    opacity: 0;
+}
+
+/* recommendation screenshot, shown whole (it is text, so never cropped) */
+.rec-shot {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #fff;
+    padding: 0.5rem;
+}
+
+/* marks a card whose popup plays an embedded video */
+.play-badge {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--primary-deep);
+    font-size: 0.8rem;
+    box-shadow: var(--glow);
+}
+
+/* YouTube Shorts are portrait: size the frame 9:16 and cap it by viewport height */
+.video-embed {
+    display: flex;
+    justify-content: center;
+}
+
+/* a portrait Short needs no letterbox frame around it */
+.modal-media:has(.video-embed) {
+    background: none;
+    border: 0;
+}
+
+.video-embed iframe {
+    display: block;
+    height: min(70vh, 640px);
+    aspect-ratio: 9 / 16;
+    max-width: 100%;
+    border: 1px solid var(--wire-bright);
+    box-shadow: var(--glow);
 }
 
 /* Confidentiality note on the Automated Tire entries */

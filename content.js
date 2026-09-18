@@ -39,7 +39,7 @@ window.CONTENT = {
       "kind": "img",
       "src": "images/ati-smartbay.jpg"
     },
-    "body": "<p class=\"nda-note\">\n<strong>A quick understanding, not a deep dive.</strong> Automated Tire's platform is proprietary,\nso the specifics stay inside the company. What follows is a high-level summary of the kind of\nperception work I lead there, at the level already published on my resume. Happy to talk through\nmy general approach in conversation.\n</p>\n<p>I lead perception engineering for a robotic service platform that works on a vehicle without\nremoving the wheel. That means owning the chain end to end: which sensors we use, the algorithms\nthat read them, and getting both running reliably on the robot.</p>\n<h4>What the work involves</h4>\n<ul>\n<li>Sensor selection backed by measurement rather than spec sheets - I built a benchmarking\nplatform that characterised seven depth cameras against the application's real requirements</li>\n<li>That benchmarking drove a fleet-wide camera replacement, with roughly 50% better accuracy,\na 20x higher frame rate, and far fewer connection failures</li>\n<li>3D reconstruction of a compressed tire's geometry to under 2 mm error - deceptively hard,\nbecause rubber under load does not hold a shape that deterministic measurement can pin down</li>\n<li>An on-robot quality assessment that I took from a 30-minute runtime to real time</li>\n<li>Object detection adapted to new camera perspectives, plus a region-of-interest step that\nimproved both localisation and segmentation</li>\n<li>A ROS 2 feedback pipeline with on-robot visualisation, and control logic that adjusts the\nrobot's routine based on what perception reports back</li>\n</ul>\n<h4>Stack</h4>\n<ul>\n<li>Depth cameras, stereo vision, camera calibration</li>\n<li>YOLOv8, PyTorch, OpenCV</li>\n<li>ROS 2, Go, Python, C++</li>\n</ul>",
+    "body": "<p class=\"nda-note\">\n<strong>A quick understanding, not a deep dive.</strong> Automated Tire's platform is proprietary,\nso the specifics stay inside the company. What follows is a high-level summary of the kind of\nperception work I lead there. Happy to talk through my general approach in conversation.\n</p>\n<p>I lead perception engineering for Automated Tire's SmartBay, a robotic platform that services\ntires without removing the wheel from the vehicle. That means owning the chain end to end: which\nsensors we use, the algorithms that read them, and getting both running reliably on the robot.\nYou can see the platform in\n<a href=\"https://www.youtube.com/watch?v=bqePUb3PUwg\" target=\"_blank\" rel=\"noopener noreferrer\">The\nRobot Report's introduction video</a>.</p>\n<h4>What the work involves</h4>\n<ul>\n<li>Evaluating and selecting depth and machine vision hardware, based on measurement against the\napplication's needs rather than spec sheets</li>\n<li>Vision models that track a compressed tire's geometry during the tire change &mdash; hard,\nbecause rubber under load doesn't hold a shape that deterministic measurement can pin down</li>\n<li>Optimising perception to run in real time on the robot</li>\n<li>Connecting what perception sees back into how the robot works</li>\n</ul>\n<h4>Tools</h4>\n<ul>\n<li>Depth cameras, stereo vision, camera calibration</li>\n<li>PyTorch, OpenCV, object detection</li>\n<li>ROS 2, Python, C++</li>\n</ul>",
     "page": "ati.html"
   },
   "atrc": {
@@ -139,10 +139,10 @@ window.CONTENT = {
     "title": "1st Place Teamwork - AI+ Global Health Hackathon",
     "subtitle": "San Francisco, CA • December 2024",
     "media": {
-      "kind": "img",
-      "src": "images/WhatsApp Image 2025-01-21 at 22.56.56_9bb54812.jpg"
+      "kind": "youtube",
+      "src": "https://www.youtube-nocookie.com/embed/lJ5rbw_M91o"
     },
-    "body": "<p>Won 1st place for outstanding teamwork at the prestigious AI+ Global Health Hackathon in San Francisco, competing against teams from top tech companies and universities.</p>\n<h4>Project: SightVoice</h4>\n<p>Developed an AI-powered visual assistant platform to help visually impaired individuals navigate their environment safely through real-time audio feedback.</p>\n<h4>Key Features Developed</h4>\n<ul>\n<li>Real-time obstacle detection using YOLOv8</li>\n<li>Spatial audio feedback system for directional guidance</li>\n<li>Apple Vision Pro integration for depth sensing</li>\n<li>Natural language scene descriptions using VLMs</li>\n<li>Voice command interface for hands-free operation</li>\n</ul>\n<h4>Team Contribution</h4>\n<ul>\n<li>Led computer vision pipeline development</li>\n<li>Integrated multiple AI models into unified system</li>\n<li>Coordinated 4-person team through 24-hour sprint</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Computer Vision</span>\n<span class=\"modal-tag\">Accessibility</span>\n<span class=\"modal-tag\">Healthcare AI</span>\n<span class=\"modal-tag\">Teamwork</span>",
+    "body": "<p>Won 1st place for outstanding teamwork at the prestigious AI+ Global Health Hackathon in San Francisco, competing against teams from top tech companies and universities.</p>\n<h4>Project: LumiWalk</h4>\n<p>Developed an AI-powered visual assistant platform to help visually impaired individuals navigate their environment safely through real-time audio feedback.</p>\n<h4>Key Features Developed</h4>\n<ul>\n<li>Real-time obstacle detection using YOLOv8</li>\n<li>Spatial audio feedback system for directional guidance</li>\n<li>Apple Vision Pro integration for depth sensing</li>\n<li>Natural language scene descriptions using VLMs</li>\n<li>Voice command interface for hands-free operation</li>\n</ul>\n<h4>Team Contribution</h4>\n<ul>\n<li>Led computer vision pipeline development</li>\n<li>Integrated multiple AI models into unified system</li>\n<li>Coordinated 4-person team through 24-hour sprint</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Computer Vision</span>\n<span class=\"modal-tag\">Accessibility</span>\n<span class=\"modal-tag\">Healthcare AI</span>\n<span class=\"modal-tag\">Teamwork</span>",
     "page": "health.html"
   },
   "hiti": {
@@ -174,6 +174,17 @@ window.CONTENT = {
     },
     "body": "<p>Research on explainable AI and medical imaging.</p>\n<h4>Key Contributions</h4>\n<ul>\n<li>Developed CV algorithm for statistical chart analysis (94% accuracy, 91% interpretability)</li>\n<li>Built explainable AI model for document recognition with full inference traceability</li>\n<li>Enhanced YOLO-based breast cancer detection, improving recall by 7%</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Explainable AI</span>\n<span class=\"modal-tag\">Medical Imaging</span>\n<span class=\"modal-tag\">YOLO</span>\n<span class=\"modal-tag\">Document Analysis</span>",
     "page": "ilead.html"
+  },
+  "lumiwalk": {
+    "title": "LumiWalk - AI Visual Assistant",
+    "subtitle": "🏆 4× Business Plan Competition Finalist • 2022-2025",
+    "media": {
+      "kind": "img",
+      "src": "images/WhatsApp Image 2025-01-21 at 22.56.56_9bb54812.jpg"
+    },
+    "body": "<p>An award-winning AI-powered platform that leverages computer vision to assist visually impaired individuals with real-time environmental awareness through audio feedback. Built in a 24-hour hackathon.</p>\n<h4>Core Features</h4>\n<ul>\n<li>Real-time obstacle detection using YOLOv8</li>\n<li>Spatial audio feedback indicating object distance and direction</li>\n<li>Scene description using Vision-Language Models</li>\n<li>Text recognition (OCR) for reading signs and labels</li>\n<li>Voice command interface for hands-free operation</li>\n</ul>\n<h4>Technical Stack</h4>\n<ul>\n<li>Apple Vision Pro integration for depth sensing</li>\n<li>WebRTC for low-latency video streaming</li>\n<li>OpenAI GPT-4V for scene understanding</li>\n<li>Text-to-Speech synthesis for audio output</li>\n<li>React Native mobile application</li>\n</ul>\n<h4>Recognition</h4>\n<p>🏆 <strong>4× Business Plan Competition Finalist</strong> (2022-2025)</p>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Computer Vision</span>\n<span class=\"modal-tag\">YOLOv8</span>\n<span class=\"modal-tag\">VLM</span>\n<span class=\"modal-tag\">Accessibility</span>\n<span class=\"modal-tag\">Business Plan Finalist</span>\n</div>",
+    "page": "lumiwalk.html",
+    "link": "https://lumiwalk.ai"
   },
   "mechatronics": {
     "title": "Robotics Researcher, Humanoid Robots",
@@ -268,17 +279,6 @@ window.CONTENT = {
     "body": "<p>Developing perception systems for autonomous vehicles.</p>\n<h4>Key Contributions</h4>\n<ul>\n<li>Fine-tuned stereo depth estimation models, reducing inference latency by 30%</li>\n<li>Developed OpenCV stereo matching and 3D reconstruction pipeline</li>\n<li>Improved downstream perception accuracy by 15%</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Depth Estimation</span>\n<span class=\"modal-tag\">Stereo Vision</span>\n<span class=\"modal-tag\">OpenCV</span>\n<span class=\"modal-tag\">Autonomous Vehicles</span>",
     "page": "sanborn.html"
   },
-  "sightvoice": {
-    "title": "SightVoice - AI Visual Assistant",
-    "subtitle": "🏆 1st Place Teamwork • AI+ Global Health Hackathon • Dec 2024",
-    "media": {
-      "kind": "img",
-      "src": "images/WhatsApp Image 2025-01-21 at 22.56.56_9bb54812.jpg"
-    },
-    "body": "<p>An award-winning AI-powered platform that leverages computer vision to assist visually impaired individuals with real-time environmental awareness through audio feedback. Built in a 24-hour hackathon.</p>\n<h4>Core Features</h4>\n<ul>\n<li>Real-time obstacle detection using YOLOv8</li>\n<li>Spatial audio feedback indicating object distance and direction</li>\n<li>Scene description using Vision-Language Models</li>\n<li>Text recognition (OCR) for reading signs and labels</li>\n<li>Voice command interface for hands-free operation</li>\n</ul>\n<h4>Technical Stack</h4>\n<ul>\n<li>Apple Vision Pro integration for depth sensing</li>\n<li>WebRTC for low-latency video streaming</li>\n<li>OpenAI GPT-4V for scene understanding</li>\n<li>Text-to-Speech synthesis for audio output</li>\n<li>React Native mobile application</li>\n</ul>\n<h4>Recognition</h4>\n<p>🏆 <strong>1st Place for Teamwork</strong> at AI+ Global Health Hackathon, San Francisco</p>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Computer Vision</span>\n<span class=\"modal-tag\">YOLOv8</span>\n<span class=\"modal-tag\">VLM</span>\n<span class=\"modal-tag\">Accessibility</span>\n<span class=\"modal-tag\">Hackathon Winner</span>\n</div>",
-    "page": "sightvoice.html",
-    "link": "https://lumiwalk.ai"
-  },
   "slam": {
     "title": "3D Reconstruction & SLAM",
     "subtitle": "Spatial Intelligence Systems",
@@ -309,6 +309,17 @@ window.CONTENT = {
     },
     "body": "<p>A high-performance stereo depth estimation system developed for autonomous vehicle perception during my internship at Sanborn. The system generates real-time depth maps from calibrated stereo camera pairs.</p>\n<h4>Algorithm Pipeline</h4>\n<ul>\n<li>Stereo camera calibration with sub-pixel accuracy</li>\n<li>Image rectification using homography transforms</li>\n<li>Semi-Global Matching (SGM) for disparity computation</li>\n<li>Census Transform for robust stereo correspondence</li>\n<li>Left-right consistency check for occlusion handling</li>\n<li>Weighted Median Filter for disparity refinement</li>\n</ul>\n<h4>Optimizations Achieved</h4>\n<ul>\n<li>30% reduction in inference latency through CUDA optimization</li>\n<li>15% improvement in downstream perception accuracy</li>\n<li>Real-time processing at 25+ FPS on RTX 3080</li>\n</ul>\n<h4>Visualization Features</h4>\n<ul>\n<li>Jet colormap depth visualization</li>\n<li>3D point cloud projection</li>\n<li>Confidence map generation</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Stereo Vision</span>\n<span class=\"modal-tag\">SGM</span>\n<span class=\"modal-tag\">OpenCV</span>\n<span class=\"modal-tag\">CUDA</span>\n<span class=\"modal-tag\">Disparity</span>\n<span class=\"modal-tag\">AV</span>",
     "page": "stereo.html"
+  },
+  "tire-vision": {
+    "title": "Tire Deformation Tracking",
+    "subtitle": "Automated Tire, Inc. · Machine Vision & ML · 2026",
+    "media": {
+      "kind": "img",
+      "src": "images/recomendation.jpeg"
+    },
+    "body": "<p>The platform: Automated Tire's SmartBay, which changes tires without taking the wheel off the\nvehicle &mdash; see it in\n<a href=\"https://www.youtube.com/watch?v=bqePUb3PUwg&amp;t=34s\" target=\"_blank\" rel=\"noopener noreferrer\">The\nRobot Report's introduction video</a>.</p>\n<p>During a robotic tire change the tire is compressed and deforms, and the process needs to watch\nfor small movements while that happens. A compressed rubber tire doesn't hold a fixed shape, so\ntracking its geometry with deterministic measurements alone is very difficult.</p>\n<h4>What I did</h4>\n<ul>\n<li>Evaluated and selected new machine vision hardware for the project</li>\n<li>Developed a novel vision model that monitors subtle movements during the tire change process</li>\n<li>Took it from idea to a working ML prototype in a short period, with millimetre-scale\nsensitivity</li>\n</ul>\n<h4>Recommendation</h4>\n<blockquote class=\"detail-quote\">\n&ldquo;Tracking the geometry of a compressed rubber tire is very difficult to solve with\ndeterministic measurements, and in a short period he demonstrated a working ML prototype with\nmm-scale sensitivity.&rdquo;\n<cite>Michael Reilly, Senior Mechatronics Engineer, Automated Tire, Inc.</cite>\n</blockquote>\n<p><a href=\"index.html#recommendations\">Read the full recommendation &rarr;</a></p>",
+    "page": "tire-vision.html",
+    "link": "https://www.youtube.com/watch?v=bqePUb3PUwg&t=34s"
   },
   "vio": {
     "title": "Visual-Inertial Odometry System",

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal Perception Engineer | Araas Boloorchi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="detail-page">
+    <div class="container">
+        <a href="index.html" class="back-btn">[Back to Portfolio]</a>
+        <h1>Principal Perception Engineer</h1>
+        <div class="subtitle">Automated Tire, Inc. · Woburn, MA · May 2026 - Present</div>
+
+        <div class="media-container">
+            <img src="images/ati-smartbay.jpg" alt="Automated Tire SmartBay robotic service platform"
+                onerror="this.closest('.media-container').hidden = true">
+        </div>
+
+        <div class="content">
+            <p class="nda-note">
+                <strong>A quick understanding, not a deep dive.</strong> Automated Tire's platform is proprietary,
+                so the specifics stay inside the company. What follows is a high-level summary of the kind of
+                perception work I lead there, at the level already published on my resume. Happy to talk through
+                my general approach in conversation.
+            </p>
+
+            <p>I lead perception engineering for a robotic service platform that works on a vehicle without
+                removing the wheel. That means owning the chain end to end: which sensors we use, the algorithms
+                that read them, and getting both running reliably on the robot.</p>
+
+            <h4>What the work involves</h4>
+            <ul>
+                <li>Sensor selection backed by measurement rather than spec sheets - I built a benchmarking
+                    platform that characterised seven depth cameras against the application's real requirements</li>
+                <li>That benchmarking drove a fleet-wide camera replacement, with roughly 50% better accuracy,
+                    a 20x higher frame rate, and far fewer connection failures</li>
+                <li>3D reconstruction of a compressed tire's geometry to under 2 mm error - deceptively hard,
+                    because rubber under load does not hold a shape that deterministic measurement can pin down</li>
+                <li>An on-robot quality assessment that I took from a 30-minute runtime to real time</li>
+                <li>Object detection adapted to new camera perspectives, plus a region-of-interest step that
+                    improved both localisation and segmentation</li>
+                <li>A ROS 2 feedback pipeline with on-robot visualisation, and control logic that adjusts the
+                    robot's routine based on what perception reports back</li>
+            </ul>
+
+            <h4>Stack</h4>
+            <ul>
+                <li>Depth cameras, stereo vision, camera calibration</li>
+                <li>YOLOv8, PyTorch, OpenCV</li>
+                <li>ROS 2, Go, Python, C++</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

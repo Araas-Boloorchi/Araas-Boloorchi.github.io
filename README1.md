@@ -15,7 +15,7 @@ Tools & Platforms: Google Cloud Platform (GCP), SolidWorks, Linux, Docker, Kuber
 Specialized Technologies: Machine Vision, Computer Vision, Deep Learning, NLP, Multi-Agent Systems, IoT, Single Board Computers, Data Visualization, Agile Methodologies, Sensor Integration, Embedded Systems, Autonomous Systems
 Soft Skills: Leadership, Team Coordination, Project Management, Research & Development, Strategic Communication
 EXPERIENCE
-Department of Computer Science ILead Laboratory at Oklahoma State University         May 2023-August 2023
+Department of Computer Science ILead Laboratory at Oklahoma State University         May 2023-May 2025
 Graduate Research Assistant 		
 •	Designed and developed an explainable architecture for interpreting pie-charts and generating descriptions in natural language, enhancing machine understanding.
 •	Developed algorithms for enhancing machine interpretation of visual data for autonomous robotic actions. Led the integration of AI-driven systems for interpreting and responding to human environments, improving interaction and operational efficiency.

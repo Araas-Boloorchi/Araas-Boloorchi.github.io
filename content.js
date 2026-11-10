@@ -62,17 +62,6 @@ window.CONTENT = {
     "body": "<p>Won 3rd place in the prestigious OSU Business Plan Competition, competing against graduate and undergraduate teams from across the university.</p>\n<h4>Business Concept</h4>\n<p>Presented a comprehensive business plan for an AI-powered robotics solution targeting industrial automation markets.</p>\n<h4>Competition Elements</h4>\n<ul>\n<li>Executive summary and business model canvas</li>\n<li>Market analysis and competitive landscape</li>\n<li>Financial projections and funding requirements</li>\n<li>Live pitch to panel of investors and entrepreneurs</li>\n</ul>\n<h4>Judging Criteria</h4>\n<ul>\n<li>Innovation and market potential</li>\n<li>Technical feasibility</li>\n<li>Team capability and execution plan</li>\n<li>Presentation quality</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Business Plan</span>\n<span class=\"modal-tag\">Entrepreneurship</span>\n<span class=\"modal-tag\">Pitch Competition</span>\n<span class=\"modal-tag\">OSU</span>",
     "page": "business.html"
   },
-  "catchup": {
-    "title": "Co-Founder & Senior Machine Learning Engineer",
-    "subtitle": "Catch Up AI • Jan 2024 - Present (Advisor since May 2026)",
-    "media": {
-      "kind": "img",
-      "src": "profile.png"
-    },
-    "body": "<p>Leading ML development for enterprise communication analytics.</p>\n<h4>Key Contributions</h4>\n<ul>\n<li>Led 4-engineer ML team from concept to production MVP in 12 weeks</li>\n<li>Architected sentiment analysis pipeline processing Jira, Slack, and Zoom data</li>\n<li>Improved precision from 0.71 → 0.86 (+21%) through advanced prompt engineering</li>\n<li>Implemented PyTorch GNN to model organizational social graphs</li>\n<li>Boosted recommendation accuracy by 22%</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">PyTorch</span>\n<span class=\"modal-tag\">GNN</span>\n<span class=\"modal-tag\">NLP</span>\n<span class=\"modal-tag\">Sentiment Analysis</span>\n<span class=\"modal-tag\">Team Lead</span>\n</div>",
-    "page": "catchup.html",
-    "link": "https://www.linkedin.com/in/araas-boloorchi"
-  },
   "cognitive": {
     "title": "AI Cognitive Systems",
     "subtitle": "Brain-Inspired AI Architecture",
@@ -167,7 +156,7 @@ window.CONTENT = {
   },
   "ilead": {
     "title": "ML Researcher",
-    "subtitle": "ILead Lab, Oklahoma State • May 2023 - Apr 2024",
+    "subtitle": "ILead Lab, Oklahoma State • May 2023 - May 2025",
     "media": {
       "kind": "img",
       "src": "images/profile1.jpg"
@@ -350,5 +339,25 @@ window.CONTENT = {
     },
     "body": "<p><strong>Full Title:</strong> Towards Responsible AI: An Implementable Blueprint for Integrating Explainability and Social-Cognitive Frameworks in AI Systems</p>\n<h4>Authors</h4>\n<p>R. Shamsuddin, <strong>A. Boloorchi</strong>, P.R. Gottimukkula</p>\n<h4>Abstract</h4>\n<p>This paper presents a comprehensive framework for building explainable AI systems that incorporate social-cognitive considerations for responsible deployment in real-world applications.</p>\n<h4>Key Contributions</h4>\n<ul>\n<li>Novel framework integrating XAI with social-cognitive theory</li>\n<li>Implementable blueprint for responsible AI development</li>\n<li>Guidelines for regulatory compliance</li>\n</ul>",
     "page": "xai.html"
+  },
+  "cogrobotics": {
+    "title": "Robot Manipulation Research",
+    "subtitle": "Cognitive Robotics Lab, Oklahoma State University • Aug 2022 - May 2023",
+    "media": {
+      "kind": "img",
+      "src": "images/Cognitive_lab.jpg"
+    },
+    "body": "<p>Robotics research at the Cognitive Robotics Lab at Oklahoma State University, focused on robot manipulation.</p>\n<h4>Focus</h4>\n<ul>\n<li>Robot manipulation on a dual-arm collaborative robot</li>\n<li>Vision-guided handling of marker-tagged objects on a tabletop</li>\n<li>Connecting perception to arm control so the robot acts on what it sees</li>\n</ul>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">Robot Manipulation</span>\n<span class=\"modal-tag\">Cognitive Robotics</span>\n<span class=\"modal-tag\">Perception</span>\n<span class=\"modal-tag\">Dual-Arm Robot</span>\n</div>",
+    "page": "cogrobotics.html"
+  },
+  "bci": {
+    "title": "Brain-Controlled Wheelchair",
+    "subtitle": "Brain-Computer Interface • 2016",
+    "media": {
+      "kind": "img",
+      "src": "images/bci2.JPG"
+    },
+    "body": "<p>A brain-computer interface project from 2016: I used sensorimotor signals, recorded with an EEG headset, to move a wheelchair.</p>\n<h4>How it worked</h4>\n<ul>\n<li>A 3D-printed EEG headset recorded brain activity over the sensorimotor area</li>\n<li>The sensorimotor signals were classified into movement commands</li>\n<li>Those commands drove the wheelchair</li>\n</ul>\n<p><img src=\"images/bci1.JPG\" alt=\"3D-printed EEG headset\" style=\"max-width:100%;height:auto\"></p>\n<div class=\"modal-tags\">\n<span class=\"modal-tag\">BCI</span>\n<span class=\"modal-tag\">EEG</span>\n<span class=\"modal-tag\">Sensorimotor Signals</span>\n<span class=\"modal-tag\">Assistive Robotics</span>\n</div>",
+    "page": "bci.html"
   }
 };
